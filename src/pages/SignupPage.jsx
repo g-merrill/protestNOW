@@ -42,9 +42,11 @@ class SignupPage extends Component {
       await userService.signup(userInputs);
       // Successfully signed up - show GamePage
       this.props.history.push('/');
+      console.log('worked!');
     } catch (err) {
       // Invalid user data (probably duplicate email)
       this.updateMessage(err.message);
+      console.log('Did not work!');
     }
   }
 
