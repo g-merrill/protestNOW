@@ -4,9 +4,6 @@ import './css/SignupPage.css';
 import userService from '../utils/userService';
 
 class SignupPage extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   state = {
     message: '',
