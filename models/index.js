@@ -6,5 +6,6 @@ mongoose.connect(DB_URL, { useNewUrlParser: true, useFindAndModify: false, useUn
   .catch((err) => console.log(err));
 
 module.exports = {
-  Story: require('./story')
+  User: require('./user'),
+  Story: require('./story'),
 }
