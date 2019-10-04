@@ -7,6 +7,7 @@ const logger = require('morgan');
 
 // controllers
 const storiesCtrl = require('./controllers/storiesCtrl');
+const usersCtrl = require('./controllers/usersCtrl');
 
 // setup environment
 require('dotenv').config();
@@ -35,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // api routes
 app.use('/api/v1/stories', storiesCtrl);
+app.use('/api/v1/users', usersCtrl);
 
 // Since this route is a "catch all" that matches every get request, be sure to mount API or other routes before it!
 app.get('/*', function(req, res) {
