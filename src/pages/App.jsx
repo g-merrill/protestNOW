@@ -5,12 +5,30 @@ import NavBar from './NavBar';
 import HomePage from './HomePage';
 import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
+import userService from '../utils/userService';
 
 class App extends Component {
+
+  state = {
+    user: userService.getUser()
+  };
+
+  handleSignupOrLogin = () => {
+    this.setState({ user: userService.getUser() });
+  }
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null });
+  }
+
   render() {
     return (
       <div className="App-ctnr">
-        <NavBar />
+        <NavBar
+          user={this.state.user}
+          handleLogout={this.handleLogout}
+        />
         <h1>protestNOW</h1>
         <Switch>
           <Route exact path='/' render={() => (
@@ -21,12 +39,13 @@ class App extends Component {
           <Route exact path='/signup' render={({ history }) => (
             <SignupPage
               history={history}
-
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}/>
           <Route exact path='/login' render={() => (
             <LoginPage
-
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}/>
         </Switch>

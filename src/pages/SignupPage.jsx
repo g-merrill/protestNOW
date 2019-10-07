@@ -36,7 +36,11 @@ class SignupPage extends Component {
         password: this.state.password,
         passwordConf: this.state.passwordConf
       };
+      console.log('got to userInputs: ', userInputs);
+      console.log('about to enter the fetch statemnt in userService signup function:');
       await userService.signup(userInputs);
+      console.log('got past the await: ');
+      this.props.handleSignup();
       // Successfully signed up - show GamePage
       this.props.history.push('/');
       console.log('worked!');
