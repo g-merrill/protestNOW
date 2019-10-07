@@ -12,20 +12,13 @@ router.get('/:id', async (req, res) => {
 
 // signup
 router.post('/signup', async (req, res) => {
-  console.log('Made it to position 1')
   const user = new db.User(req.body);
-  console.log('Made it to position 2', user)
   try {
-    console.log('Made it to position 3');
     await user.save();
-    console.log('Made it to position 4', user);
     const token = createJWT(user);
-    console.log('Made it to position 5');
-    console.log('token created!: ', token);
     res.json({ token });
   } catch (err) {
     // Probably a duplicate username
-    console.log('did not save!');
     res.status(400).json(err);
   }
 });

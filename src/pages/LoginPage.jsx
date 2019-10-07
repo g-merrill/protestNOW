@@ -20,17 +20,12 @@ class LoginPage extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     try {
-      console.log('about to enter the fetch statemnt in userService login function:');
       await userService.login(this.state);
-      console.log('got past the await: ');
       this.props.handleSignupOrLogin();
       // Successfully signed up - show GamePage
       this.props.history.push('/');
-      console.log('worked!');
     } catch (err) {
       // Invalid user data (probably duplicate email)
-      console.log('Invalid Credentials!');
-      console.log('Did not work!');
     }
   }
 

@@ -9,16 +9,12 @@ function signup(user) {
     body: JSON.stringify(user)
   })
   .then(res => {
-    console.log('Completed the fetch statement.', res)
     if (res.ok) return res.json();
-    console.log('Failed the if (res.ok) statement')
     // Probably a duplicate username
     throw new Error('Username already taken!');
   })
   .then(({ token }) => {
-    console.log('Just before the tokenService call')
     tokenService.setToken(token);
-    console.log('Got past the tokenService call')
   });
 }
 

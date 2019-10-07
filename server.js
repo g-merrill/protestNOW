@@ -5,12 +5,12 @@ const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 
+// setup environment
+require('dotenv').config();
+
 // controllers
 const storiesCtrl = require('./controllers/storiesCtrl');
 const usersCtrl = require('./controllers/usersCtrl');
-
-// setup environment
-require('dotenv').config();
 
 const app = express();
 
@@ -35,8 +35,9 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 
 // api routes
-app.use('/api/v1/stories', storiesCtrl);
 app.use('/api/v1/users', usersCtrl);
+app.use(require('./config/auth'));
+app.use('/api/v1/stories', storiesCtrl);
 
 // Since this route is a "catch all" that matches every get request, be sure to mount API or other routes before it!
 app.get('/*', function(req, res) {
