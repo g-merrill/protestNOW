@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './css/HomePage.css';
 
-const HomePage = props => {
-  return (
-    <div>HomePage</div>
-  );
+class HomePage extends Component {
+
+  componentDidMount() {
+    this.props.changeActive('home');
+  }
+
+  render() {
+    return (
+      <div>HomePage</div>
+    );
+  }
 }
 
 export default HomePage;

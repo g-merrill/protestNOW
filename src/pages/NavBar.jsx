@@ -4,21 +4,13 @@ import './css/NavBar.css';
 
 class NavBar extends Component {
 
-  state = {
-    active: 'home'
-  }
-
-  changeActive = page => {
-    this.setState({ active: page });
-  }
-
   render() {
     this.navJSX = this.props.user ?
       <div>
         <Link
           to='/'
-          className={`NavBar-link ${this.state.active === 'home' ? 'active' : ''}`}
-          onClick={() => this.changeActive('home')}
+          className={`NavBar-link ${this.props.activePage === 'home' ? 'active' : 'inactive'}`}
+          onClick={() => this.props.changeActive('home')}
         >
           HOME
         </Link>
@@ -33,8 +25,8 @@ class NavBar extends Component {
         &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
         <Link
           to='/profile'
-          className={`NavBar-link ${this.state.active === 'profile' ? 'active' : ''}`}
-          onClick={() => this.changeActive('profile')}
+          className={`NavBar-link ${this.props.activePage === 'profile' ? 'active' : 'inactive'}`}
+          onClick={() => this.props.changeActive('profile')}
         >
           PROFILE
         </Link>
@@ -43,24 +35,24 @@ class NavBar extends Component {
       <div>
         <Link
           to='/'
-          className={`NavBar-link ${this.state.active === 'home' ? 'active' : ''}`}
-          onClick={() => this.changeActive('home')}
+          className={`NavBar-link ${this.props.activePage === 'home' ? 'active' : 'inactive'}`}
+          onClick={() => this.props.changeActive('home')}
         >
           HOME
         </Link>
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <Link
           to='/login'
-          className={`NavBar-link ${this.state.active === 'login' ? 'active' : ''}`}
-          onClick={() => this.changeActive('login')}
+          className={`NavBar-link ${this.props.activePage === 'login' ? 'active' : 'inactive'}`}
+          onClick={() => this.props.changeActive('login')}
         >
           LOG IN
         </Link>
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <Link
           to='/signup'
-          className={`NavBar-link ${this.state.active === 'signup' ? 'active' : ''}`}
-          onClick={() => this.changeActive('signup')}
+          className={`NavBar-link ${this.props.activePage === 'signup' ? 'active' : 'inactive'}`}
+          onClick={() => this.props.changeActive('signup')}
         >
           SIGN UP
         </Link>

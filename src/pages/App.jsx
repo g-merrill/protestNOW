@@ -6,6 +6,7 @@ import HomePage from './HomePage';
 import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
 import ProfilePage from './ProfilePage';
+import ProfileEditPage from './ProfileEditPage';
 import userService from '../utils/userService';
 import * as moment from 'moment';
 
@@ -13,7 +14,8 @@ class App extends Component {
 
   state = {
     user: userService.getUser(),
-    users: []
+    users: [],
+    activePage: 'home'
   };
 
   handleSignupOrLogin = () => {
@@ -22,7 +24,7 @@ class App extends Component {
 
   handleLogout = () => {
     userService.logout();
-    this.setState({ user: null });
+    this.setState({ user: null, activePage: 'home' });
   }
 
   async componentDidMount() {
@@ -30,17 +32,25 @@ class App extends Component {
     this.setState({ users })
   }
 
+  changeActive = page => {
+    this.setState({ activePage: page });
+  }
+
   render() {
     return (
       <div className="App-ctnr">
         <NavBar
           user={this.state.user}
+          activePage={this.state.activePage}
           handleLogout={this.handleLogout}
+          changeActive={this.changeActive}
         />
         <h1>protestNOW</h1>
         <Switch>
           <Route exact path='/' render={() => (
-            <HomePage />
+            <HomePage
+              changeActive={this.changeActive}
+            />
           )}/>
           <Route exact path='/signup' render={({ history }) => (
             <SignupPage
@@ -54,8 +64,15 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}/>
-          <Route exact path='/profile' render={() => (
+          <Route exact path='/profile' render={({ history }) => (
             <ProfilePage
+              history={ history }
+              user={this.state.user}
+            />
+          )}/>
+          <Route exact path='/profile/edit' render={({ history }) => (
+            <ProfileEditPage
+              history={ history }
               user={this.state.user}
             />
           )}/>
