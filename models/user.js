@@ -4,10 +4,33 @@ const bcrypt = require('bcrypt');
 const SALT_ROUNDS = 6;
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
   firstName: String,
   lastInitial: String,
-  password: { type: String, required: true }
+  password: {
+    type: String,
+    required: true
+  },
+  followedProtests: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Protest'
+  }],
+  favStories: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Story'
+  }],
+  createdStories: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Story'
+  }],
+  bookmarkedStory: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Story'
+  }
 }, {
   timestamps: true
 });

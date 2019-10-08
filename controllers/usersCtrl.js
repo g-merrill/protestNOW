@@ -5,11 +5,17 @@ const db = require('../models');
 const router = express.Router();
 const SECRET = process.env.SECRET;
 
-// index
+// index (get all)
 router.get('/', async (req, res) => {
   const users = await db.User.find({})
   res.json(users);
 });
+
+// // show (get one)
+// router.get('/:id', async (req, res) => {
+//   const user = await db.User.findById(req.params.id);
+//   res.json(user);
+// });
 
 // signup
 router.post('/signup', async (req, res) => {
