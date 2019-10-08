@@ -1,0 +1,23 @@
+.ProfilePage {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.ProfilePage .data-ctnr {
+  display: flex;
+  justify-content: center;
+}
+
+.ProfilePage .data-left {
+  width: 40vw;
+  text-align: right;
+  margin: 0 2vw 0 0;
+}
+.ProfilePage .data-right {
+  width: 40vw;
+  text-align: left;
+  margin: 0 0 0 2vw;
+}

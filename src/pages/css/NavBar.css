@@ -6,8 +6,14 @@
 
 .NavBar-link {
   margin: 0 10px;
+  color: skyblue;
 }
 
-.NavBar-welcome {
-  color: grey;
+.NavBar-link:hover {
+  color: dimgray;
+  text-decoration: none;
+}
+
+.NavBar-link.active {
+  color: dimgray;
 }

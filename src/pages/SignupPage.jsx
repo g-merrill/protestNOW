@@ -41,7 +41,7 @@ class SignupPage extends Component {
       // Successfully signed up - show GamePage
       this.props.history.push('/');
     } catch (err) {
-      // Invalid user data (probably duplicate email)
+      // Invalid user data (probably duplicate username)
       this.updateMessage(err.message);
     }
   }

@@ -1,13 +1,14 @@
 const express = require('express');
-const router = express.Router();
-const db = require('../models');
 const jwt = require('jsonwebtoken');
+const db = require('../models');
+
+const router = express.Router();
 const SECRET = process.env.SECRET;
 
-// show
-router.get('/:id', async (req, res) => {
-  const user = await db.User.find({ username: req.params.id });
-  return res.json(user);
+// index
+router.get('/', async (req, res) => {
+  const users = await db.User.find({})
+  res.json(users);
 });
 
 // signup

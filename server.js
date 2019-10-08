@@ -36,7 +36,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // api routes
 app.use('/api/v1/users', usersCtrl);
-app.use(require('./config/auth'));
 app.use('/api/v1/stories', storiesCtrl);
 
 // Since this route is a "catch all" that matches every get request, be sure to mount API or other routes before it!

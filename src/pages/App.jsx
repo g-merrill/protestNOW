@@ -5,12 +5,15 @@ import NavBar from './NavBar';
 import HomePage from './HomePage';
 import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
+import ProfilePage from './ProfilePage';
 import userService from '../utils/userService';
+import * as moment from 'moment';
 
 class App extends Component {
 
   state = {
-    user: userService.getUser()
+    user: userService.getUser(),
+    users: []
   };
 
   handleSignupOrLogin = () => {
@@ -20,6 +23,11 @@ class App extends Component {
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
+  }
+
+  async componentDidMount() {
+    const users = await userService.index();
+    this.setState({ users })
   }
 
   render() {
@@ -32,9 +40,7 @@ class App extends Component {
         <h1>protestNOW</h1>
         <Switch>
           <Route exact path='/' render={() => (
-            <HomePage
-
-            />
+            <HomePage />
           )}/>
           <Route exact path='/signup' render={({ history }) => (
             <SignupPage
@@ -48,6 +54,22 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}/>
+          <Route exact path='/profile' render={() => (
+            <ProfilePage
+              user={this.state.user}
+            />
+          )}/>
+
+          {/* REMOVE THIS BEFORE SUBMITTING APP */}
+          <Route exact path='/api/v1/users' render={() => (
+            this.state.users.map((u, idx) => (
+              <>
+              <p>{idx + 1}. {u.username} - Created: {moment(u.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
+              <hr />
+              </>
+            ))
+          )}/>
+          {/* REMOVE THIS BEFORE SUBMITTING APP */}
         </Switch>
       </div>
     );

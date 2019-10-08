@@ -25,7 +25,8 @@ class LoginPage extends Component {
       // Successfully signed up - show GamePage
       this.props.history.push('/');
     } catch (err) {
-      // Invalid user data (probably duplicate email)
+      // Invalid user data (probably duplicate username)
+      console.log('bad credentials');
     }
   }
 
