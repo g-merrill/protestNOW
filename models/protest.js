@@ -26,7 +26,6 @@ const ProtestSchema = new Schema({
   keywords: [{
     type: String
   }]
-
 }, {
   timestamps: true
 });
