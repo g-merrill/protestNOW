@@ -7,6 +7,7 @@ import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
 import ProfilePage from './ProfilePage';
 import ProfileEditPage from './ProfileEditPage';
+import ProtestCreatePage from './ProtestCreatePage';
 import userService from '../utils/userService';
 import * as moment from 'moment';
 
@@ -108,7 +109,12 @@ class App extends Component {
               handleChangeUpdate={this.handleChangeUpdate}
             />
           )}/>
-
+          <Route exact path='/protests/create' render={({ history }) => (
+            <ProtestCreatePage
+              history={ history }
+              user={this.state.user}
+            />
+          )}/>
           {/* REMOVE THIS BEFORE SUBMITTING APP */}
           <Route exact path='/api/v1/users' render={() => (
             this.state.users.map((u, idx) => (

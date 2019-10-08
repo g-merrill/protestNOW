@@ -30,6 +30,20 @@ class NavBar extends Component {
         >
           PROFILE
         </Link>
+        &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <Link
+          to='/protests'
+          className='NavBar-link'
+        >
+          PROTESTS
+        </Link>
+        &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <Link
+          to='/protests/create'
+          className='NavBar-link'
+        >
+          ADD PROTEST
+        </Link>
       </div>
       :
       <div>
@@ -55,6 +69,13 @@ class NavBar extends Component {
           onClick={() => this.props.changeActive('signup')}
         >
           SIGN UP
+        </Link>
+        &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <Link
+          to='/protests'
+          className='NavBar-link'
+        >
+          PROTESTS
         </Link>
       </div>;
     return (

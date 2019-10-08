@@ -7,5 +7,7 @@ mongoose.connect(DB_URL, { useNewUrlParser: true, useFindAndModify: false, useUn
 
 module.exports = {
   User: require('./user'),
+  Protest: require('./protest'),
   Story: require('./story'),
+  Media: require('./media')
 }
