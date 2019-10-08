@@ -118,10 +118,10 @@ class App extends Component {
           {/* REMOVE THIS BEFORE SUBMITTING APP */}
           <Route exact path='/api/v1/users' render={() => (
             this.state.users.map((u, idx) => (
-              <>
-              <p>{idx + 1}. {u.username} - Created: {moment(u.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
-              <hr />
-              </>
+              <div key={idx + 1}>
+                <p>{idx + 1}. {u.username} - Created: {moment(u.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
+                <hr />
+              </div>
             ))
           )}/>
           {/* REMOVE THIS BEFORE SUBMITTING APP */}
