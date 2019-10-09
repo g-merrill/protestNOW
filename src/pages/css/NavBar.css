@@ -1,0 +1,24 @@
+.NavBar {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px;
+}
+
+.NavBar-link {
+  margin: 0 10px;
+  color: skyblue;
+}
+
+
+.NavBar-link:hover {
+  color: dimgray;
+  text-decoration: none;
+}
+
+.NavBar-link.active {
+  color: dimgray;
+}
+
+.NavBar-link.inactive {
+  color: skyblue;
+}

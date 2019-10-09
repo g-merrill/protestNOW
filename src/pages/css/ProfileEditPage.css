@@ -1,0 +1,30 @@
+.ProfileEditPage {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.ProfileEditPage .save-btn {
+  margin: 2vh;
+  background-color: rgba(135, 206, 235, 0.75);
+  color: dimgray;
+  cursor: pointer;
+}
+
+.ProfileEditPage .save-btn:hover {
+  background-color: rgba(135, 206, 235, 1);
+  color: black;
+}
+
+.ProfileEditPage .cancel-btn {
+  background-color: rgba(255, 201, 141, 0.75);
+  color: dimgray;
+  cursor: pointer;
+}
+
+.ProfileEditPage .cancel-btn:hover {
+  background-color: rgba(255, 201, 141, 1);
+  color: black;
+}
