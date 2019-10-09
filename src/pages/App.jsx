@@ -13,6 +13,7 @@ import ProtestsCtnr from '../components/ProtestsCtnr';
 import * as moment from 'moment';
 import protestService from '../utils/protestService';
 import SingleProtestPage from './SingleProtestPage';
+import StoryCreatePage from './StoryCreatePage';
 
 class App extends Component {
 
@@ -108,6 +109,12 @@ class App extends Component {
           )}/>
           <Route exact path='/protests/create' render={({ history }) => (
             <ProtestCreatePage
+              history={ history }
+              user={ this.state.user }
+            />
+          )}/>
+          <Route path='/protests/:id/stories/create' render={({ history }) => (
+            <StoryCreatePage
               history={ history }
               user={ this.state.user }
             />
