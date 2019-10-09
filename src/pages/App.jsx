@@ -15,11 +15,6 @@ class App extends Component {
 
   state = {
     user: userService.getUser(),
-    username: '',
-    firstName: '',
-    lastInitial: '',
-    password: '',
-    passwordConf: '',
     users: [],
     activePage: 'home'
   };
@@ -27,10 +22,7 @@ class App extends Component {
   handleSignupOrLogin = () => {
     let user = userService.getUser();
     this.setState({
-      user,
-      username: user.username,
-      firstName: user.firstName,
-      lastInitial: user.lastInitial
+      user
     });
   }
 
@@ -41,25 +33,11 @@ class App extends Component {
 
   async componentDidMount() {
     // load anything that might require an async fetch call here
-    // load user data if this.state.user is not null
-    let username, firstName, lastInitial;
-    if (this.state.user) {
-      username = this.state.user.username;
-      firstName = this.state.user.firstName;
-      lastInitial = this.state.user.lastInitial;
-    } else {
-      username = '';
-      firstName = '';
-      lastInitial = '';
-    }
     // load all users (do i remove this before deployment?)
     const users = await userService.index();
     // load protests list
     // load stories of homepage's selected protest
     this.setState({
-      username,
-      firstName,
-      lastInitial,
       users
     });
   }

@@ -17,6 +17,7 @@ const ProtestSchema = new Schema({
   location: String,
   creator: {
     type: String,
+    required: true,
     default: 'anonymous'
   },
   stories: [{

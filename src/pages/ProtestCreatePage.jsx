@@ -80,30 +80,22 @@ const defaultProps = {
 };
 
 class ProtestCreatePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      focused: props.autoFocus,
-      date: props.initialDate,
-    };
-
-    this.onDateChange = this.onDateChange.bind(this);
-    this.onFocusChange = this.onFocusChange.bind(this);
-  }
 
   state = {
     name: '',
+    date: this.props.initialDate,
     city: '',
     location: '',
     creator: this.props.user.username,
-    keywords: []
+    keywords: [],
+    focused: this.props.autoFocus,
   };
 
-  onDateChange(date) {
+  onDateChange = date => {
     this.setState({ date });
   }
 
-  onFocusChange({ focused }) {
+  onFocusChange = ({ focused }) => {
     this.setState({ focused });
   }
 
@@ -122,9 +114,29 @@ class ProtestCreatePage extends Component {
 
   }
 
-  handleSubmit = e => {
-    console.log(this.state);
-    this.props.history.push('/');
+  handleSubmit = async e => {
+    e.preventDefault();
+    try {
+      let protestInputs = {
+        name: this.state.name,
+        date: moment(this.state.date).toDate(),
+        city: this.state.city,
+        location: this.state.location,
+        creator: this.state.creator,
+        keywords: this.state.keywords,
+      };
+      console.log('protestInputs ---', protestInputs);
+      // THIS IS THE BACKEND STUFF
+      // await userService.signup(protestInputs);
+      // this.props.handleSignupOrLogin();
+      // THIS IS THE BACKEND STUFF
+
+      // Successfully signed up - show GamePage
+      // this.props.history.push('/');
+    } catch (err) {
+      // Invalid user data (probably duplicate protest name)
+      console.log(err);
+    }
   }
 
   render() {
@@ -152,7 +164,7 @@ class ProtestCreatePage extends Component {
               <div className="DatePicker-ctnr">
                 <DatePicker
                   {...props}
-                  id="date_input"
+                  id="protestDatePickerContainer"
                   date={date}
                   focused={focused}
                   onDateChange={this.onDateChange}
