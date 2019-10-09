@@ -6,6 +6,10 @@ function index() {
   return fetch(BASE_URL).then(res => res.json());
 }
 
+function getProtestByID(id) {
+  return fetch(`${BASE_URL}/${id}`).then(res => res.json());
+}
+
 function addProtest(protestInputs) {
   if (!userService.getUser()) return;
   return fetch(`${BASE_URL}/create`, {
@@ -21,5 +25,6 @@ function addProtest(protestInputs) {
 
 export default {
   index,
+  getProtestByID,
   addProtest,
 };

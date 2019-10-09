@@ -1,4 +1,4 @@
-.ProtestsCtnr {
+.SingleProtestPage {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -6,6 +6,11 @@
   margin-bottom: 50px;
 }
 
-.protest-link-ctnr {
+.protest-info {
+  display: flex;
+  border: 1px solid;
+}
+
+.story-ctnr {
   border: 1px solid;
 }

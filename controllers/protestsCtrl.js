@@ -13,6 +13,16 @@ router.get('/', async (req, res) => {
   }
 });
 
+// getProtestByID (get one protest)
+router.get('/:id', async (req, res) => {
+  try {
+    const protest = await db.Protest.findById(req.params.id);
+    res.json(protest);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // add protest
 router.post('/create', async (req, res) => {
   const protest = new db.Protest(req.body);
