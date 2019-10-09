@@ -149,7 +149,7 @@ class ProtestCreatePage extends Component {
               </div>
             </div>
             <div className="form-group">
-              <div className="col-sm-12">
+              <div className="DatePicker-ctnr">
                 <DatePicker
                   {...props}
                   id="date_input"
@@ -157,6 +157,17 @@ class ProtestCreatePage extends Component {
                   focused={focused}
                   onDateChange={this.onDateChange}
                   onFocusChange={this.onFocusChange}
+                  initialDate={{
+                    _isAMomentObject: true,
+                    _isUTC: false,
+                    _pf: {
+                      empty: false,
+                      unusedTokens: [],
+                      unusedInput: []
+                    }
+                  }}
+                  showClearDate
+                  reopenPickerOnClearDate
                 />
               </div>
             </div>
