@@ -9,14 +9,17 @@ import ProfilePage from './ProfilePage';
 import ProfileEditPage from './ProfileEditPage';
 import ProtestCreatePage from './ProtestCreatePage';
 import userService from '../utils/userService';
+import ProtestsCtnr from '../components/ProtestsCtnr';
 import * as moment from 'moment';
+import protestService from '../utils/protestService';
 
 class App extends Component {
 
   state = {
     user: userService.getUser(),
     users: [],
-    activePage: 'home'
+    protests: [],
+    activePage: 'home',
   };
 
   handleSignupOrLogin = () => {
@@ -35,10 +38,14 @@ class App extends Component {
     // load anything that might require an async fetch call here
     // load all users (do i remove this before deployment?)
     const users = await userService.index();
+
     // load protests list
+    const protests = await protestService.index();
+
     // load stories of homepage's selected protest
     this.setState({
-      users
+      users,
+      protests,
     });
   }
 
@@ -85,6 +92,13 @@ class App extends Component {
               history={ history }
               user={this.state.user}
               handleChangeUpdate={this.handleChangeUpdate}
+            />
+          )}/>
+          <Route exact path='/protests' render={({ history }) => (
+            <ProtestsCtnr
+              history={ history }
+              user={this.state.user}
+              protests={this.state.protests}
             />
           )}/>
           <Route exact path='/protests/create' render={({ history }) => (

@@ -6,6 +6,7 @@ import moment from 'moment';
 import omit from 'lodash/omit';
 import './css/ProtestCreatePage.css';
 import DatePicker from '../components/DatePicker';
+import protestService from '../utils/protestService';
 
 import { SingleDatePickerPhrases } from '../defaultPhrases';
 import SingleDatePickerShape from '../shapes/SingleDatePickerShape';
@@ -126,13 +127,14 @@ class ProtestCreatePage extends Component {
         keywords: this.state.keywords,
       };
       console.log('protestInputs ---', protestInputs);
+
       // THIS IS THE BACKEND STUFF
-      // await userService.signup(protestInputs);
-      // this.props.handleSignupOrLogin();
+      // below is the fetch call in the service file
+      await protestService.addProtest(protestInputs);
       // THIS IS THE BACKEND STUFF
 
       // Successfully signed up - show GamePage
-      // this.props.history.push('/');
+      this.props.history.push('/');
     } catch (err) {
       // Invalid user data (probably duplicate protest name)
       console.log(err);

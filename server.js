@@ -9,8 +9,9 @@ const logger = require('morgan');
 require('dotenv').config();
 
 // controllers
-const storiesCtrl = require('./controllers/storiesCtrl');
 const usersCtrl = require('./controllers/usersCtrl');
+const protestsCtrl = require('./controllers/protestsCtrl');
+const storiesCtrl = require('./controllers/storiesCtrl');
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // api routes
 app.use('/api/v1/users', usersCtrl);
+app.use('/api/v1/protests', protestsCtrl);
 app.use('/api/v1/stories', storiesCtrl);
 
 // Since this route is a "catch all" that matches every get request, be sure to mount API or other routes before it!
