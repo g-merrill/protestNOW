@@ -5,3 +5,58 @@
   align-items: center;
   margin-bottom: 50px;
 }
+
+.StoryCreatePage * {
+  /* border: 1px solid; */
+}
+
+.StoryCreatePage .photo-ctnr {
+  display: flex;
+  position: relative;
+  height: 50vh;
+  width: calc(50vh / 667 * 375);
+}
+
+.StoryCreatePage .photo-edit-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 25px;
+  height: 25px;
+}
+
+.StoryCreatePage .photo {
+  height: 100%;
+}
+
+.StoryCreatePage .photo-input {
+  display: none;
+}
+
+.StoryCreatePage .mood-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.StoryCreatePage .mood-dropdown-arrow {
+  border-top: 5px solid;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.StoryCreatePage .mood-ctnr {
+  display: flex;
+}
+
+.StoryCreatePage .entry-ctnr {
+  display: flex;
+  position: relative;
+}
+
+.StoryCreatePage .beg-quote {
+  align-self: flex-start;
+}
+
+.StoryCreatePage .end-quote {
+  align-self: flex-end;
+}

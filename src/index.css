@@ -5,6 +5,7 @@
 body {
   margin: 0;
   font-family: "Roboto", "Oxygen", "Open Sans", "Lato", "Fira Sans", sans-serif;
+  background: #f2f2f2;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

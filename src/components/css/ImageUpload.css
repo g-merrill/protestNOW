@@ -1,0 +1,119 @@
+.StoryCreatePage-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100vw;
+  position: relative;
+  border: 1px solid;
+  height: 420px;
+}
+.Buttons-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 50vh;
+  width: 100vw;
+}
+
+.Buttons-button {
+  margin: 0 10vw
+}
+
+.Images-delete {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.Buttons-button svg, .Images-delete svg {
+  filter: drop-shadow(3px 3px 3px #999);
+  transition: 0.3s;
+  transform: rotate(-0.2deg)
+}
+
+.Buttons-button svg:hover, .Images-delete svg:hover {
+  filter: drop-shadow(4px 4px 4px #999);
+  transform: rotate(-0.6deg);
+  cursor: pointer
+}
+
+.Images-delete svg {
+  filter: drop-shadow(1px 1px 1px #999);
+  opacity: 0.75;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+}
+
+.Images-delete svg:hover {
+  filter: drop-shadow(1.5px 1.5px 1.5px);
+  opacity: 1;
+}
+
+.Buttons-button input[type=file] {
+  visibility: hidden;
+  position: absolute
+}
+
+.Images-fadein img {
+  max-height: 420px;
+  max-width: 420px;
+  padding: 10px;
+  border: 1px dashed #999;
+}
+
+/* Animations */
+.Buttons-fadein {
+  animation: fadein 2s;
+}
+.Images-fadein {
+  animation: fadein 2s;
+  display: flex;
+  position: relative;
+}
+.Spinner-fadein {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Spinner-spinner {
+  animation: spin 1.2s infinite linear;
+}
+
+.Spinner-spinner svg {
+  background: #f2f2f2;
+  border-radius: 50%
+}
+
+@keyframes spin {
+  0%  {
+    -webkit-transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(360deg)
+  }
+}
+
+.Spinner-rolling {
+  position: absolute;
+  animation: move 6s ease-out;
+  filter: drop-shadow(4px 4px 4px #999);
+}
+
+@keyframes move {
+  0%  {
+    left: -5%;
+  }
+  100% {
+    left: 105%;
+  }
+}

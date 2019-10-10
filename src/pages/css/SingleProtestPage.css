@@ -6,11 +6,11 @@
   margin-bottom: 50px;
 }
 
-.protest-info {
+.SingleProtestPage .protest-info {
   display: flex;
   border: 1px solid;
 }
 
-.story-ctnr {
+.SingleProtestPage .story-ctnr {
   border: 1px solid;
 }
