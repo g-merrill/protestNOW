@@ -10,12 +10,10 @@ const API_URL = '/api/v1/media';
 
 class StoryCreatePage extends Component {
   state = {
-    hasPhoto: false,
-    imgSrc: '#',
     mood: 'am here:',
-    photo: '',
     uploading: false,
-    images: []
+    images: [],
+    imgUrl: ''
   }
 
   onChange = e => {
@@ -31,9 +29,11 @@ class StoryCreatePage extends Component {
     })
     .then(res => res.json())
     .then(images => {
+      let imgUrl = images[0].secure_url;
       this.setState({
         uploading: false,
-        images
+        images,
+        imgUrl
       });
     });
   }
@@ -52,8 +52,6 @@ class StoryCreatePage extends Component {
   }
 
   render() {
-    const photo =
-      <img src={this.state.imgSrc} className="photo" alt="story"/>;
     const uploading = this.state.uploading;
     const images = this.state.images;
     const content = () => {
@@ -61,39 +59,15 @@ class StoryCreatePage extends Component {
         case uploading:
           return <Spinner />
         case images.length > 0:
-          return <Images images={images} removeImage={this.removeImage} />
+          return <Images images={images} removeImage={this.removeImage} onChange={this.onChange} />
         default:
           return <Buttons onChange={this.onChange} />
       }
     }
     return (
       <div className="StoryCreatePage">
-        {/*  */}
-
-
-
-
-
-
         <div className='StoryCreatePage-buttons'>
           {content()}
-        </div>
-
-
-
-
-
-
-
-
-
-        {/*  */}
-        <div className="photo-ctnr">
-          <form className="photo-edit-btn" encType="multipart/form-data">
-            <label htmlFor="uploadedPhoto"><i className="fas fa-pen-square"></i></label>
-            <input type="file" accept="image/*" name="photo" id="uploadedPhoto" className="photo-input" onChange={this.handleChange}/>
-          </form>
-          {this.state.hasPhoto && photo}
         </div>
         <br/>
         <span className="mood-ctnr">&nbsp; Why I &nbsp;<div className="mood-dropdown">&nbsp;{this.state.mood}&nbsp;<div className="mood-dropdown-arrow"></div>&nbsp;</div></span>
