@@ -6,7 +6,7 @@ class NavBar extends Component {
 
   render() {
     this.navJSX = this.props.user ?
-      <div>
+      <div id="top">
         <Link
           to='/'
           className={`NavBar-link ${this.props.activePage === 'home' ? 'active' : 'inactive'}`}
@@ -46,7 +46,7 @@ class NavBar extends Component {
         </Link>
       </div>
       :
-      <div>
+      <div id="top">
         <Link
           to='/'
           className={`NavBar-link ${this.props.activePage === 'home' ? 'active' : 'inactive'}`}

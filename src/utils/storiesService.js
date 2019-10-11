@@ -5,7 +5,8 @@ const BASE_URL = '/api/v1/stories';
 
 export default {
   index,
-  addStory
+  addStory,
+  deleteStory,
 };
 
 function index() {
@@ -28,5 +29,14 @@ function addStory(storyInputs) {
   .then(res => {
     if (res.ok) return res.json();
     throw new Error('Error creating story!');
+  });
+}
+
+function deleteStory(storyID) {
+  if (!userService.getUser()) return;
+  return fetch(`${BASE_URL}/${storyID}`, { method: 'DELETE' })
+  .then(res => {
+    if (res.ok) return res.json();
+    throw new Error('Error deleting story!');
   });
 }

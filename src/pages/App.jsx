@@ -18,22 +18,22 @@ import StoryCreatePage from './StoryCreatePage';
 class App extends Component {
 
   state = {
-    user: userService.getUser(),
+    userFromToken: userService.getUser(),
     users: [],
     protests: [],
     activePage: 'home',
   };
 
   handleSignupOrLogin = () => {
-    let user = userService.getUser();
+    let userFromToken = userService.getUser();
     this.setState({
-      user
+      userFromToken
     });
   }
 
   handleLogout = () => {
     userService.logout();
-    this.setState({ user: null, activePage: 'home' });
+    this.setState({ userFromToken: null, activePage: 'home' });
   }
 
   async componentDidMount() {
@@ -65,11 +65,16 @@ class App extends Component {
     this.setState({ protests });
   }
 
+  updateStoriesForProtest = async () => {
+    const protests = await protestService.index();
+    this.setState({ protests });
+  }
+
   render() {
     return (
       <div className="App-ctnr">
         <NavBar
-          user={ this.state.user }
+          user={ this.state.userFromToken }
           activePage={ this.state.activePage }
           handleLogout={ this.handleLogout }
           changeActive={ this.changeActive }
@@ -96,35 +101,36 @@ class App extends Component {
           <Route exact path='/profile' render={({ history }) => (
             <ProfilePage
               history={ history }
-              user={ this.state.user }
+              user={ this.state.userFromToken }
             />
           )}/>
           <Route exact path='/profile/edit' render={({ history }) => (
             <ProfileEditPage
               history={ history }
-              user={ this.state.user }
+              user={ this.state.userFromToken }
               handleChangeUpdate={ this.handleChangeUpdate }
             />
           )}/>
           <Route exact path='/protests' render={({ history }) => (
             <ProtestsCtnr
               history={ history }
-              user={ this.state.user }
+              user={ this.state.userFromToken }
               protests={ this.state.protests }
             />
           )}/>
           <Route exact path='/protests/create' render={({ history }) => (
             <ProtestCreatePage
               history={ history }
-              user={ this.state.user }
+              user={ this.state.userFromToken }
               addProtestToState= { this.addProtestToState }
             />
           )}/>
           <Route path='/protests/:id/stories/create' render={props => (
             <StoryCreatePage
               history={ props.history }
-              user={ this.state.user }
+              user={ this.state.userFromToken }
               protestID={ props.match.params.id }
+              updateStoriesForProtest={this.updateStoriesForProtest}
             />
           )}/>
           <Route path='/protests/:id' render={props => {
@@ -132,9 +138,10 @@ class App extends Component {
               <SingleProtestPage
                 match={ props.match }
                 history={ props.history }
-                user={ this.state.user }
+                user={ this.state.userFromToken }
                 protestID={ props.match.params.id }
                 getProtestByID={ this.getProtestByID }
+                updateStoriesForProtest={ this.updateStoriesForProtest }
               />
             );
           }}/>

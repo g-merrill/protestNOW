@@ -24,7 +24,6 @@ router.get('/:id', async (req, res) => {
         model: 'User'
       }
     });
-    console.log(protest, protest.stories[0].creator);
     res.json(protest);
   } catch (err) {
     res.status(400).json(err);

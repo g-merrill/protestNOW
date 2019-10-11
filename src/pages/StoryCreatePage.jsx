@@ -15,7 +15,7 @@ class StoryCreatePage extends Component {
     uploading: false,
     images: [],
     imgUrl: '',
-    mood: 'am here:',
+    mood: 'am here',
     entry: ''
   }
 
@@ -65,7 +65,6 @@ class StoryCreatePage extends Component {
         mood: this.state.mood,
         entry: this.state.entry,
       };
-      console.log('storyInputs ---', storyInputs);
 
       // THIS IS THE BACKEND STUFF
       // below is the fetch call in the service file
@@ -74,6 +73,8 @@ class StoryCreatePage extends Component {
       // add story to protest in db
       // add story to user in db
 
+      // somehow tell app's protest to do a fresh db call
+      this.props.updateStoriesForProtest();
       // Successfully signed up - show GamePage
       this.props.history.push(`/protests/${this.props.protestID}`);
     } catch (err) {
@@ -105,8 +106,8 @@ class StoryCreatePage extends Component {
           <span className="mood-ctnr">
             <p className="mood-whyI">Why I</p>
             <select name="mood" onChange={this.handleChange} className="mood-dropdown form-control">
-              <option defaultValue="am here.">am here.</option>
-              <option value="am showing up.">am showing up.</option>
+              <option defaultValue="am here">am here</option>
+              <option value="am showing up">am showing up</option>
             </select>
           </span>
           <br/>

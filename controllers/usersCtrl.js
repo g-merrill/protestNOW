@@ -11,11 +11,11 @@ router.get('/', async (req, res) => {
   res.json(users);
 });
 
-// // show (get one)
-// router.get('/:id', async (req, res) => {
-//   const user = await db.User.findById(req.params.id);
-//   res.json(user);
-// });
+// show (get one)
+router.get('/:id', async (req, res) => {
+  const user = await db.User.findById(req.params.id);
+  res.json(user);
+});
 
 // signup
 router.post('/signup', async (req, res) => {
