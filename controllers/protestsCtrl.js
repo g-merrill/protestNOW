@@ -16,7 +16,13 @@ router.get('/', async (req, res) => {
 // getProtestByID (get one protest)
 router.get('/:id', async (req, res) => {
   try {
-    const protest = await db.Protest.findById(req.params.id);
+    const protest = await db.Protest.findById(req.params.id).populate('stories');
+    console.log(protest);
+    protest = await db.Protest.populate(protest, {
+      path: 'stories.creator',
+      model: 'User'
+    });
+    console.log(protest);
     res.json(protest);
   } catch (err) {
     res.status(400).json(err);

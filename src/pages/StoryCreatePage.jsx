@@ -69,7 +69,7 @@ class StoryCreatePage extends Component {
 
       // THIS IS THE BACKEND STUFF
       // below is the fetch call in the service file
-      const story = await storiesService.addStory(storyInputs);
+      await storiesService.addStory(storyInputs);
       // THIS IS THE BACKEND STUFF
       // add story to protest in db
       // add story to user in db

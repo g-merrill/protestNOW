@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import './css/SingleProtestPage.css'
+import userService from '../utils/userService';
 
 class SingleProtestPage extends Component {
   state = {
     protest: {},
     stories: [],
+    users: [],
     userHasStory: false,
     userStoryUrl: ''
   }
@@ -14,16 +16,33 @@ class SingleProtestPage extends Component {
   async componentDidMount() {
     const protest = await this.props.getProtestByID(this.props.protestID);
     const stories = protest.stories;
-    this.setState({ protest, stories });
+    const users = [];
+    console.log(protest);
+    // for (let story of stories) {
+      // the following lines of code breaks
+      // let user = await userService.getSingleUserData(story.creator);
+      // let user = story.creator;
+      // user = (user.firstName && user.lastInitial) ? `${user.firstName} ${user.lastInitial}` : user.username;
+      // users.push(user);
+    // }
+    this.setState({ protest, stories, users });
   }
+
   render() {
     let stories = this.state.stories.length ?
-      this.state.protest.stories.map((s, idx) => (
-        <div key={idx + 1} className="story-ctnr">
-          <p>Story #{idx + 1}: </p>
-          <p>"{s.entry}"</p>
-        </div>
-      ))
+      this.state.stories.map((s, idx) => {
+        console.log(s);
+        return (
+          <div key={idx + 1} className="story-ctnr">
+            <p>Story #{idx + 1}: </p>
+            <img src={s.photoUrl} alt="" />
+            <p>{this.state.users[idx]} said:</p>
+            <p>Why I {s.mood}</p>
+            <p>"{s.entry}"</p>
+          </div>
+        );
+      }
+      )
       :
       <div className="story-ctnr">
         <p>No stories yet!</p>
