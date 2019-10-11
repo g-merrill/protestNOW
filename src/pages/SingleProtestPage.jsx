@@ -8,7 +8,6 @@ class SingleProtestPage extends Component {
   state = {
     protest: {},
     stories: [],
-    users: [],
     userHasStory: false,
     userStoryUrl: ''
   }
@@ -17,26 +16,29 @@ class SingleProtestPage extends Component {
     const protest = await this.props.getProtestByID(this.props.protestID);
     const stories = protest.stories;
     const users = [];
-    console.log(protest);
-    // for (let story of stories) {
-      // the following lines of code breaks
-      // let user = await userService.getSingleUserData(story.creator);
-      // let user = story.creator;
-      // user = (user.firstName && user.lastInitial) ? `${user.firstName} ${user.lastInitial}` : user.username;
-      // users.push(user);
-    // }
-    this.setState({ protest, stories, users });
+    let userHasStory = false;
+    let userStoryUrl = '';
+    for (let story of stories) {
+      let user = story.creator;
+      if (this.props.user && this.props.user.username === user.username) {
+        userHasStory = true;
+        userStoryUrl = `#${story._id}`
+        // userStoryUrl = `/protests/${this.props.protestID}#${story._id}`
+      }
+      user = (user.firstName && user.lastInitial) ? `${user.firstName} ${user.lastInitial}` : user.username;
+      users.push(user);
+    }
+    this.setState({ protest, stories, users, userHasStory, userStoryUrl });
   }
 
   render() {
     let stories = this.state.stories.length ?
       this.state.stories.map((s, idx) => {
-        console.log(s);
         return (
           <div key={idx + 1} className="story-ctnr">
             <p>Story #{idx + 1}: </p>
             <img src={s.photoUrl} alt="" />
-            <p>{this.state.users[idx]} said:</p>
+            <p id={s._id}>{this.state.users[idx]} said:</p>
             <p>Why I {s.mood}</p>
             <p>"{s.entry}"</p>
           </div>
@@ -61,7 +63,8 @@ class SingleProtestPage extends Component {
           <p># stories: {this.state.stories.length}</p>
         </div>
         {this.state.userHasStory ?
-          <Link to={`${this.props.match.url}#${this.state.userStoryUrl}`}>See your Story</Link>
+          <a href={this.state.userStoryUrl}>See your Story</a>
+          // <Link to={this.state.userStoryUrl}>See your Story</Link>
           :
           <Link to={`${this.props.match.url}/stories/create`}>Add your Story!</Link>
         }
