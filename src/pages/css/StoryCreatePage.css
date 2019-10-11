@@ -1,0 +1,70 @@
+.StoryCreatePage {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.StoryCreatePage * {
+  /* border: 1px solid; */
+}
+
+.StoryCreatePage .photo-ctnr {
+  display: flex;
+  position: relative;
+  height: 50vh;
+  width: calc(50vh / 667 * 375);
+}
+
+.StoryCreatePage .photo-edit-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 25px;
+  height: 25px;
+}
+
+.StoryCreatePage .photo {
+  height: 100%;
+}
+
+.StoryCreatePage .photo-input {
+  display: none;
+}
+
+.StoryCreatePage .mood-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.StoryCreatePage .mood-ctnr {
+  display: flex;
+  width: 50vw;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.StoryCreatePage .mood-whyI {
+  min-width: 70px;
+  padding: 20px 0 0;
+}
+
+.StoryCreatePage .entry-ctnr {
+  display: flex;
+  position: relative;
+}
+
+.StoryCreatePage .beg-quote {
+  align-self: flex-start;
+}
+
+.StoryCreatePage .end-quote {
+  align-self: flex-end;
+}
+
+.StoryCreatePage .StoryForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

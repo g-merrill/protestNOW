@@ -126,15 +126,14 @@ class ProtestCreatePage extends Component {
         creator: this.state.creator,
         keywords: this.state.keywords,
       };
-      console.log('protestInputs ---', protestInputs);
-
       // THIS IS THE BACKEND STUFF
       // below is the fetch call in the service file
-      await protestService.addProtest(protestInputs);
+      const protest = await protestService.addProtest(protestInputs);
       // THIS IS THE BACKEND STUFF
-
+      console.log(protest);
+      this.props.addProtestToState(protest);
       // Successfully signed up - show GamePage
-      this.props.history.push('/');
+      this.props.history.push('/protests');
     } catch (err) {
       // Invalid user data (probably duplicate protest name)
       console.log(err);

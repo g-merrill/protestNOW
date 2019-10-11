@@ -1,10 +1,11 @@
 import tokenService from './tokenService';
+import userService from './userService';
 
 const BASE_URL = '/api/v1/stories';
 
 export default {
   index,
-  create
+  addStory
 };
 
 function index() {
@@ -17,15 +18,15 @@ function index() {
   return fetch(BASE_URL, options).then(res => res.json());
 }
 
-function create(story) {
-  const options = {
+function addStory(storyInputs) {
+  if (!userService.getUser()) return;
+  return fetch(`${BASE_URL}/create`, {
     method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-      // Add this header - don't forget the space after Bearer
-      'Authorization': `Bearer ${tokenService.getToken()}`
-    },
-    body: JSON.stringify(story)
-  };
-  return fetch(BASE_URL, options).then(res => res.json());
+    headers: new Headers({'Content-Type': 'application/json'}),
+    body: JSON.stringify(storyInputs)
+  })
+  .then(res => {
+    if (res.ok) return res.json();
+    throw new Error('Error creating story!');
+  });
 }

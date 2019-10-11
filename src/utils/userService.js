@@ -6,9 +6,9 @@ function index() {
   return fetch(BASE_URL).then(res => res.json());
 }
 
-// function getSingleUserData(mongoID) {
-//   return fetch(`${BASE_URL}/${mongoID}`).then(res => res.json());
-// }
+function getSingleUserData(mongoID) {
+  return fetch(`${BASE_URL}/${mongoID}`).then(res => res.json());
+}
 
 function signup(user) {
   return fetch(`${BASE_URL}/signup`, {
@@ -50,7 +50,7 @@ function login(creds) {
 
 export default {
   index,
-  // getSingleUserData,
+  getSingleUserData,
   signup,
   getUser,
   logout,

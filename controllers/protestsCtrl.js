@@ -13,6 +13,24 @@ router.get('/', async (req, res) => {
   }
 });
 
+// getProtestByID (get one protest)
+router.get('/:id', async (req, res) => {
+  try {
+    const protest = await db.Protest.findById(req.params.id).populate({
+      path: 'stories',
+      model: 'Story',
+      populate: {
+        path: 'creator',
+        model: 'User'
+      }
+    });
+    console.log(protest, protest.stories[0].creator);
+    res.json(protest);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // add protest
 router.post('/create', async (req, res) => {
   const protest = new db.Protest(req.body);
