@@ -38,14 +38,16 @@
   align-items: center;
 }
 
-.StoryCreatePage .mood-dropdown-arrow {
-  border-top: 5px solid;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-}
-
 .StoryCreatePage .mood-ctnr {
   display: flex;
+  width: 50vw;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.StoryCreatePage .mood-whyI {
+  min-width: 70px;
+  padding: 20px 0 0;
 }
 
 .StoryCreatePage .entry-ctnr {
@@ -59,4 +61,10 @@
 
 .StoryCreatePage .end-quote {
   align-self: flex-end;
+}
+
+.StoryCreatePage .StoryForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

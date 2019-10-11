@@ -20,7 +20,6 @@ const ProtestsCtnr = props => (
         </div>
       </Link>
     ))}
-
   </div>
 );
 

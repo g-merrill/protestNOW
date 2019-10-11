@@ -59,6 +59,12 @@ class App extends Component {
     return protestService.getProtestByID(id);
   }
 
+  addProtestToState = protest => {
+    let protests = [...this.state.protests];
+    protests.push(protest);
+    this.setState({ protests });
+  }
+
   render() {
     return (
       <div className="App-ctnr">
@@ -111,12 +117,14 @@ class App extends Component {
             <ProtestCreatePage
               history={ history }
               user={ this.state.user }
+              addProtestToState= { this.addProtestToState }
             />
           )}/>
-          <Route path='/protests/:id/stories/create' render={({ history }) => (
+          <Route path='/protests/:id/stories/create' render={props => (
             <StoryCreatePage
-              history={ history }
+              history={ props.history }
               user={ this.state.user }
+              protestID={ props.match.params.id }
             />
           )}/>
           <Route path='/protests/:id' render={props => {

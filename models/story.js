@@ -12,11 +12,15 @@ const StorySchema = new Schema({
     required: true,
     ref: 'User'
   },
-  media: [{
-    type: Schema.Types.ObjectId,
-    required: true,
-    ref: 'Media'
-  }],
+  // media: [{
+  //   type: Schema.Types.ObjectId,
+  //   required: true,
+  //   ref: 'Media'
+  // }],
+  photoUrl: {
+    type: String,
+    required: true
+  },
   mood: {
     type: String,
     required: true,
@@ -27,8 +31,7 @@ const StorySchema = new Schema({
     required: true,
   },
   genUrl: {
-    type: String,
-    required: true
+    type: String
   },
   keywords: [{
     type: String
