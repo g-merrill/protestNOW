@@ -98,7 +98,7 @@ class StoryCreatePage extends Component {
     }
     return (
       <div className="StoryCreatePage">
-        <form className="form-horizontal StoryForm" onSubmit={this.handleSubmit}>
+        <form className="form-horizontal story-form" onSubmit={this.handleSubmit}>
           <div className='ImageUpload'>
             {content()}
           </div>
@@ -118,7 +118,7 @@ class StoryCreatePage extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Create Protest</button>&nbsp;&nbsp;
+              <button className="btn btn-default">Add Your Story</button>&nbsp;&nbsp;
               <Link to={`/protests/${this.props.protestID}`}>Cancel</Link>
             </div>
           </div>
