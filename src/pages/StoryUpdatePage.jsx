@@ -1,22 +1,47 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faImage, faCircle } from '@fortawesome/free-solid-svg-icons'
+import moment from 'moment';
 import Spinner from '../components/Spinner';
 import Images from '../components/Images';
-import Buttons from '../components/Buttons';
-
-import './css/StoryCreatePage.css';
-import '../components/css/ImageUpload.css';
 import storiesService from '../utils/storiesService';
+import '../components/css/ImageUpload.css';
+import './css/StoryUpdatePage.css';
 
 const API_URL = '/api/v1/media';
 
-class StoryCreatePage extends Component {
+class StoryUpdatePage extends Component {
+
   state = {
+    prevStory: {
+      protest: '',
+      creator: '',
+      mood: '',
+      photoUrl: '',
+      entry: '',
+    },
     uploading: false,
     images: [],
     imgUrl: '',
-    mood: 'am here',
+    mood: '',
     entry: ''
+  };
+
+  async componentDidMount() {
+    // load story to be edited
+    const prevStory = await storiesService.getStory(this.props.storyID);
+    const imgUrl = prevStory.photoUrl;
+    const mood = prevStory.mood;
+    const entry = prevStory.entry;
+    prevStory && this.setState({ prevStory, imgUrl, mood, entry });
+  }
+
+  // change event handler for other state inputs
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   }
 
   // change event handler for image-upload
@@ -48,42 +73,26 @@ class StoryCreatePage extends Component {
     });
   }
 
-  // change event handler for other state inputs
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  }
-
   handleSubmit = async e => {
     e.preventDefault();
     try {
       let storyInputs = {
         protest: this.props.protestID,
-        creator: this.props.user._id,
+        creator: this.state.prevStory.creator._id,
         photoUrl: this.state.imgUrl,
         mood: this.state.mood,
         entry: this.state.entry,
       };
-
-      // THIS IS THE BACKEND STUFF
-      // below is the fetch call in the service file
-      await storiesService.addStory(storyInputs);
-      // THIS IS THE BACKEND STUFF
-      // add story to protest in db
-      // add story to user in db
-
-      // somehow tell app's protest to do a fresh db call
-      this.props.updateStoriesForProtest();
-      // Successfully signed up - show GamePage
+      await storiesService.editStory(this.props.storyID, storyInputs);
       this.props.history.push(`/protests/${this.props.protestID}`);
     } catch (err) {
-      // Invalid story data
       console.log(err);
     }
   }
 
   render() {
+    const prevStory = this.state.prevStory;
+    const storyCreator = ((prevStory.creator.firstName && prevStory.creator.lastInitial) && `${prevStory.creator.firstName} ${prevStory.creator.lastInitial}`) || prevStory.creator.username;
     const uploading = this.state.uploading;
     const images = this.state.images;
     const content = () => {
@@ -93,16 +102,33 @@ class StoryCreatePage extends Component {
         case images.length > 0:
           return <Images images={images} removeImage={this.removeImage} onChange={this.onChange} />
         default:
-          return <Buttons onChange={this.onChange} />
+          return (
+            <div className='Images-fadein'>
+              <img src={this.state.imgUrl} alt='' />
+              <div className='Images-edit-btn'>
+                <label htmlFor='single' className='fa-layers fa-fw'>
+                  <FontAwesomeIcon icon={faCircle} color='black' size='6x' />
+                  <FontAwesomeIcon icon={faImage} color='#f2f2f2' size='4x' />
+                </label>
+                <input type='file' id='single' onChange={this.onChange} />
+              </div>
+            </div>
+          );
       }
     }
     return (
-      <div className="StoryCreatePage">
+      <div className="StoryUpdatePage">
+        <h3>Update Your Story for: </h3>
+        <h4>{ prevStory.protest.name }</h4>
+        <h5>{ moment(prevStory.protest.date).format('MMMM Do, YYYY') }</h5>
         <form className="form-horizontal story-form" onSubmit={this.handleSubmit}>
           <div className='ImageUpload'>
             {content()}
           </div>
-          <br/>
+          <p>{ storyCreator } said: </p>
+          <p>Why I { prevStory.mood }:</p>
+          <p>"{ prevStory.entry }"</p>
+          <hr/>
           <span className="mood-ctnr">
             <p className="mood-whyI">Why I</p>
             <select name="mood" onChange={this.handleChange} className="mood-dropdown form-control">
@@ -113,12 +139,12 @@ class StoryCreatePage extends Component {
           <br/>
           <div className="entry-ctnr">
             <span className="beg-quote">"</span>
-            <textarea name="entry" id="entry" cols="30" rows="10" placeholder="Enter your story here." onChange={this.handleChange}></textarea>
+            <textarea name="entry" id="entry" cols="30" rows="10" defaultValue={prevStory.entry} placeholder="Enter your story here." onChange={this.handleChange}></textarea>
             <span className="end-quote">"</span>
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Add Your Story</button>&nbsp;&nbsp;
+              <button className="btn btn-default">Save Your Story</button>&nbsp;&nbsp;
               <Link to={`/protests/${this.props.protestID}`}>Cancel</Link>
             </div>
           </div>
@@ -128,4 +154,4 @@ class StoryCreatePage extends Component {
   }
 }
 
-export default StoryCreatePage;
+export default StoryUpdatePage;

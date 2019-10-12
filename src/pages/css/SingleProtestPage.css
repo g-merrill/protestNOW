@@ -14,3 +14,10 @@
 .SingleProtestPage .story-ctnr {
   border: 1px solid;
 }
+
+.SingleProtestPage img {
+  max-height: 420px;
+  max-width: 420px;
+  padding: 10px;
+  border: 1px dashed #999;
+}

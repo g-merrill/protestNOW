@@ -24,7 +24,7 @@ const StorySchema = new Schema({
   mood: {
     type: String,
     required: true,
-    default: 'am here:'
+    default: 'am here'
   },
   entry: {
     type: String,
