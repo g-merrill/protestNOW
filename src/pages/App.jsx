@@ -14,6 +14,7 @@ import * as moment from 'moment';
 import protestService from '../utils/protestService';
 import SingleProtestPage from './SingleProtestPage';
 import StoryCreatePage from './StoryCreatePage';
+import StoryUpdatePage from './StoryUpdatePage';
 
 class App extends Component {
 
@@ -131,6 +132,14 @@ class App extends Component {
               user={ this.state.userFromToken }
               protestID={ props.match.params.id }
               updateStoriesForProtest={this.updateStoriesForProtest}
+            />
+          )}/>
+          <Route path='/protests/:protest_id/stories/:story_id/update' render={props => (
+            <StoryUpdatePage
+              history={ props.history }
+              user={ this.state.userFromToken }
+              protestID={ props.match.params.protest_id }
+              storyID={ props.match.params.story_id }
             />
           )}/>
           <Route path='/protests/:id' render={props => {

@@ -9,7 +9,7 @@ class SingleProtestPage extends Component {
     protest: {},
     stories: [],
     userHasStory: false,
-    userStoryLink: ''
+    userStoryID: ''
   }
 
   componentDidMount() {
@@ -21,19 +21,19 @@ class SingleProtestPage extends Component {
     const stories = protest.stories;
     const users = [];
     let userHasStory = false;
-    let userStoryLink = '';
+    let userStoryID = '';
     if (stories.length) {
       stories.forEach(story => {
         let user = story.creator;
         if (this.props.user && this.props.user.username === user.username) {
           userHasStory = true;
-          userStoryLink = `#${story._id}`;
+          userStoryID = story._id.toString();
         }
         user = (user.firstName && user.lastInitial) ? `${user.firstName} ${user.lastInitial}` : user.username;
         users.push(user);
       });
     }
-    this.setState({ protest, stories, users, userHasStory, userStoryLink });
+    this.setState({ protest, stories, users, userHasStory, userStoryID });
   }
 
   // submitDifferentStory = storyID => {
@@ -59,20 +59,24 @@ class SingleProtestPage extends Component {
         if (this.props.user && this.props.user.username === s.creator.username) {
           usersButtons =
           <div>
-            {/* <button onClick={() => this.submitDifferentStory(s._id)}>Submit a different story.</button> */}
+            <Link to={`/protests/${this.props.protestID}/stories/${this.state.userStoryID}/update`}>Edit your story.</Link>
             <a href="#top" onClick={() => this.deleteStory(s._id)}>Delete your story.</a>
           </div>;
         }
         return (
-          <div key={idx + 1} className="story-ctnr">
-            <p>Story #{idx + 1}: </p>
-            <img id={s._id} src={s.photoUrl} alt="" />
-            <p>{this.state.users[idx]} said:</p>
-            <p>Why I {s.mood}:</p>
-            <p>"{s.entry}"</p>
+          <div key={idx + 1}>
+            <div className="story-ctnr">
+              <p>Story #{idx + 1}: </p>
+              <img id={s._id} src={s.photoUrl} alt="" />
+              <div className="story-text-content">
+                <p className="story-creator">{this.state.users[idx]} said:</p>
+                <p className="story-mood">Why I {s.mood}:</p>
+                <p className="story-entry">"{s.entry}"</p>
+              </div>
+            </div>
             {usersButtons}
             <a href='#top'>Back to the Top</a>
-          </div>
+            </div>
         );
       })
       :
@@ -85,7 +89,7 @@ class SingleProtestPage extends Component {
     let storyLinks;
     if (this.props.user) {
       storyLinks = this.state.userHasStory ?
-        <a href={this.state.userStoryLink}>See your Story</a>
+        <a href={`#${this.state.userStoryID}`}>See your Story</a>
         :
         <Link to={`${this.props.match.url}/stories/create`}>Add your Story!</Link>
     }
@@ -99,6 +103,7 @@ class SingleProtestPage extends Component {
           <p>Location: {protest.location}</p>
           <p># stories: {this.state.stories.length}</p>
         </div>
+        {/* <input class="search-bar" id="search" type="text" name="query" onkeyup={() => search()} placeholder="Search Stories" /> */}
         {storyLinks}
         {stories}
       </div>
