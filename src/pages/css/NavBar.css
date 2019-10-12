@@ -11,12 +11,12 @@
 
 
 .NavBar-link:hover {
-  color: dimgray;
+  color: #f2f2f2;
   text-decoration: none;
 }
 
 .NavBar-link.active {
-  color: dimgray;
+  color: #f2f2f2;
 }
 
 .NavBar-link.inactive {

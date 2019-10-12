@@ -27,6 +27,7 @@
   background-color: rgba(135, 206, 235, 0.75);
   color: dimgray;
   cursor: pointer;
+  display: none;
 }
 
 .ProfilePage .edit-btn:hover {
