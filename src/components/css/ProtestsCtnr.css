@@ -1,11 +1,41 @@
 .ProtestsCtnr {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-height: 100vh;
+  width: 100vw;
+  overflow: scroll;
 }
 
-.ProtestsCtnr .protest-link-ctnr {
-  border: 1px solid;
+.ProtestsCtnr * {
+  /* border: 1px solid; */
+}
+
+.ProtestsCtnr .protest-link {
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 10px;
+  height: 250px;
+  width: 250px;
+  overflow: scroll;
+  border: 1px solid skyblue;
+  text-decoration: none;
+}
+
+.ProtestsCtnr .protest-link:hover {
+  border: 1px solid lightgray;
+}
+
+.ProtestsCtnr .protest-details-ctnr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ProtestsCtnr .protest-details-ctnr>* {
+  color: skyblue;
+}
+
+.ProtestsCtnr .protest-link:hover .protest-details-ctnr>* {
+  color: lightgray;
 }

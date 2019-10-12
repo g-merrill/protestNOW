@@ -9,13 +9,14 @@ const ProtestsCtnr = props => (
       <Link
         to={`/protests/${p._id}`}
         key={idx}
+        className="protest-link"
       >
-        <div className="protest-link-ctnr">
+        <div className="protest-details-ctnr">
           <h3>{p.name}</h3>
           <p>{moment(p.date).format("MMMM Do, YYYY")}</p>
-          <p>{p.city}</p>
-          <p>Location: {p.location}</p>
+          <p>City: {p.city}</p>
           <p># stories: {p.stories.length}</p>
+          <p>Location: {p.location}</p>
         </div>
       </Link>
     ))}
