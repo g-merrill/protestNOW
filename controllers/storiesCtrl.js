@@ -21,6 +21,12 @@ router.post('/create', async (req, res) => {
   }
 });
 
+// get one story
+router.get('/:id', async (req, res) => {
+  const story = await db.Story.findById(req.params.id).populate('protest').populate('creator');
+  return res.json(story);
+});
+
 router.delete('/:id', async (req, res) => {
   const deletedStory = await db.Story.findByIdAndDelete(req.params.id);
   // find attached protest and delete from that protest's stories array

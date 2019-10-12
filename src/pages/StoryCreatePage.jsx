@@ -99,7 +99,7 @@ class StoryCreatePage extends Component {
     return (
       <div className="StoryCreatePage">
         <form className="form-horizontal StoryForm" onSubmit={this.handleSubmit}>
-          <div className='StoryCreatePage-buttons'>
+          <div className='ImageUpload'>
             {content()}
           </div>
           <br/>

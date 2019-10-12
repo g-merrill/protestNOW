@@ -5,11 +5,18 @@ import './css/ImageUpload.css';
 
 
 const Spinner = () => (
-  <div className="Spinner-rolling">
-    <div className='Spinner-spinner Spinner-fadein'>
-      <FontAwesomeIcon icon={faVectorSquare} size='5x' color='black' />
+  <>
+    <div className="Spinner-rolling left">
+      <div className='Spinner-spinner Spinner-fadein'>
+        <FontAwesomeIcon icon={faVectorSquare} size='5x' color='black' />
+      </div>
     </div>
-  </div>
+    <div className="Spinner-rolling right">
+      <div className='Spinner-spinner Spinner-fadein'>
+        <FontAwesomeIcon icon={faVectorSquare} size='5x' color='black' />
+      </div>
+    </div>
+  </>
 );
 
 export default Spinner;
