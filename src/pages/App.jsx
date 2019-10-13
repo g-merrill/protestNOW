@@ -80,7 +80,7 @@ class App extends Component {
           handleLogout={ this.handleLogout }
           changeActive={ this.changeActive }
         />
-        <h1>protestNOW</h1>
+        <h1 className='protestNOW-text'>protest<span className='now-text'>NOW</span></h1>
         <Switch>
           <Route exact path='/' render={() => (
             <HomePage

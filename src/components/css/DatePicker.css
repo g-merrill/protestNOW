@@ -1,9 +1,60 @@
+.ProtestCreatePage .DatePicker-ctnr td.CalendarDay {
+  color: black;
+}
+
+td.CalendarDay[aria-disabled="true"] {
+  color: lightgray !important;
+}
+
 .CalendarDay__selected {
   background: dimgray;
-  color: skyblue;
+  color: skyblue !important;
+  font-weight: bold;
+  border-bottom-color: skyblue;
+  border-left-color: skyblue;
+  border-right-color: skyblue;
+  border-top-color: skyblue;
 }
 
 .CalendarDay__selected:hover {
   background: skyblue;
   color: dimgray;
+  font-weight: bold;
+}
+
+.SingleDatePicker.SingleDatePicker_1 {
+  width: inherit;
+}
+
+.SingleDatePickerInput.SingleDatePickerInput_1.SingleDatePickerInput__withBorder.SingleDatePickerInput__withBorder_2 {
+  width: 70vw;
+  border: none;
+}
+
+.DateInput.DateInput_1 {
+  width: inherit;
+  background-color: rgba(10, 10, 10, 1);
+  border-radius: 4px;
+}
+
+.DateInput_input.DateInput_input_1 {
+  width: inherit;
+  font-size: 16px;
+}
+
+/* .DayPickerKeyboardShortcuts_buttonReset.DayPickerKeyboardShortcuts_buttonReset_1.DayPickerKeyboardShortcuts_show.DayPickerKeyboardShortcuts_show_2.DayPickerKeyboardShortcuts_show__bottomRight.DayPickerKeyboardShortcuts_show__bottomRight_3 {
+  border-right: 33px solid skyblue;
+} */
+
+.DayPickerKeyboardShortcuts_show__bottomRight::before {
+  border-right: 33px solid dimgray;
+  color: skyblue;
+}
+
+.DayPickerKeyboardShortcuts_showSpan {
+  color: skyblue;
+}
+
+.DayPickerKeyboardShortcuts_show__bottomRight:hover .DayPickerKeyboardShortcuts_showSpan {
+  color: white;
 }

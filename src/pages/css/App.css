@@ -1,3 +1,11 @@
 .App-ctnr {
   text-align: center;
 }
+
+.App-ctnr .protestNOW-text {
+  margin: 0 0 5vh;
+}
+
+.App-ctnr .now-text {
+color: skyblue;
+}
