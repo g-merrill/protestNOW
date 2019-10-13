@@ -6,42 +6,74 @@
   margin-bottom: 50px;
 }
 
-.StoryCreatePage .mood-dropdown {
-  display: flex;
-  align-items: center;
-}
-
-.StoryCreatePage .mood-ctnr {
-  display: flex;
-  width: 50vw;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.StoryCreatePage .mood-whyI {
-  min-width: 70px;
-  padding: 20px 0 0;
-}
-
-.StoryCreatePage .entry-ctnr {
-  display: flex;
-  position: relative;
-}
-
-.StoryCreatePage .beg-quote {
-  align-self: flex-start;
-}
-
-.StoryCreatePage .end-quote {
-  align-self: flex-end;
-}
-
 .StoryCreatePage .story-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.StoryCreatePage .mood-ctnr {
+  width: 50vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.StoryCreatePage .mood-whyI {
+  margin: 0;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.StoryCreatePage .mood-dropdown {
+  background-color: rgba(10, 10, 10, 1);
+  border: none;
+  color: skyblue;
+  width: 70%;
+}
+
+.StoryCreatePage .entry-ctnr {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.StoryCreatePage .entry-text-area {
+  background-color: rgba(10, 10, 10, 1);
+  border: none;
+  color: skyblue;
+  width: 95%;
+  padding: 15px 20px;
+}
+
+.StoryCreatePage .entry-text-area::placeholder {
+  color: darkgray;
+}
+
+.StoryCreatePage .beg-quote {
+  font-size: 150%;
+}
+.StoryCreatePage .end-quote {
+  font-size: 150%;
+  align-self: flex-end;
+}
+
 .StoryCreatePage .add-story-btn {
-  color: lightgray;
+  background-color: skyblue;
+  color: rgba(10, 10, 10, 1);
+  font-weight: bold;
+  margin: 3vh 3vw 0 0;
+}
+
+.StoryCreatePage .cancel-btn {
+  margin: 3vh 0 0 3vw;
+  color: skyblue;
+}
+
+.StoryCreatePage .hover-white:hover {
+  color: white;
 }

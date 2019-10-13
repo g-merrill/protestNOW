@@ -104,7 +104,7 @@ class StoryCreatePage extends Component {
           </div>
           <br/>
           <span className="mood-ctnr">
-            <p className="mood-whyI">Why I</p>
+            <p className="mood-whyI">Why I ...</p>
             <select name="mood" onChange={this.handleChange} className="mood-dropdown form-control">
               <option defaultValue="am here">am here</option>
               <option value="am showing up">am showing up</option>
@@ -113,13 +113,13 @@ class StoryCreatePage extends Component {
           <br/>
           <div className="entry-ctnr">
             <span className="beg-quote">"</span>
-            <textarea name="entry" id="entry" cols="30" rows="10" placeholder="Enter your story here." onChange={this.handleChange}></textarea>
+            <textarea className="entry-text-area" name="entry" id="entry" cols="30" rows="10" placeholder="Enter your story here." onChange={this.handleChange}></textarea>
             <span className="end-quote">"</span>
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default add-story-btn">Add Your Story</button>&nbsp;&nbsp;
-              <Link to={`/protests/${this.props.protestID}`}>Cancel</Link>
+              <button className="btn btn-default hover-white add-story-btn">Add Your Story</button>&nbsp;&nbsp;
+              <Link className="btn btn-default hover-white cancel-btn" to={`/protests/${this.props.protestID}`}>Cancel</Link>
             </div>
           </div>
         </form>
