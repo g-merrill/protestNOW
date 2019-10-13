@@ -153,7 +153,7 @@ class ProtestCreatePage extends Component {
     return (
       <div className='ProtestCreatePage'>
         <h3 className="page-header">Submit an Upcoming Protest to protestNOW:</h3>
-        <form className="form-horizontal" onSubmit={this.handleSubmit} >
+        <form className="form-horizontal protest-create-form" onSubmit={this.handleSubmit} >
           <div className="form-group input-ctnr-div">
             <p className='input-label'>Name of the protest&nbsp;&nbsp;=>&nbsp;&nbsp;</p>
             <div>

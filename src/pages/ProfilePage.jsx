@@ -4,7 +4,7 @@ import './css/ProfilePage.css';
 
 const ProfilePage = props => (
   <div className='ProfilePage'>
-    <h3>Profile Details</h3>
+    <h3 className='profile-header'>Your Profile</h3>
     <div className="data-ctnr">
       <label className="data-left" htmlFor="username">Username:</label>
       <p id="username" className="data-right">{props.user.username}</p>

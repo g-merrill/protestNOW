@@ -7,12 +7,18 @@
 }
 
 .ProtestCreatePage .page-header {
-  margin: 0 0 5vh;
+  margin: 0;
   background-color: rgba(10, 10, 10, 1);
   width: 100vw;
-  padding: 4vh 0;
+  padding: 6vh 0 4vh;
   font-weight: bold;
   color: skyblue;
+  text-align: center;
+}
+
+.ProtestCreatePage .protest-create-form {
+  background-color: rgba(10, 10, 10, 1);
+  padding: 3vh 0 0;
 }
 
 .ProtestCreatePage .input-ctnr-div {
@@ -39,13 +45,17 @@
   width: 70vw;
 }
 
+.ProtestCreatePage input[type="text"]::placeholder {
+  color: darkgray;
+}
+
 .ProtestCreatePage .DatePicker-ctnr {
   width: 70vw;
 }
 
 .ProtestCreatePage .submit-btn-row {
   background-color: rgba(10, 10, 10, 1);
-  padding: 5vh 0;
+  padding: 2vh 0;
   display: flex;
   justify-content: center;
   align-items: center;

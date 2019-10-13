@@ -12,7 +12,7 @@ const ProtestsCtnr = props => (
         className="protest-link"
       >
         <div className="protest-details-ctnr">
-          <h3>{p.name}</h3>
+          <h3 className='protest-name'>{p.name}</h3>
           <p>{moment(p.date).format("MMMM Do, YYYY")}</p>
           <p>City: {p.city}</p>
           <p># stories: {p.stories.length}</p>

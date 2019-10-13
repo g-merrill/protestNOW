@@ -1,8 +1,14 @@
 .App-ctnr {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
 }
 
 .App-ctnr .protestNOW-text {
+  text-align: center;
   margin: 0 0 5vh;
 }
 
