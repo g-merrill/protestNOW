@@ -6,10 +6,17 @@
   margin-bottom: 50px;
 }
 
+.SignupPage .fader-top {
+  height: 10vh;
+  width: 100vw;
+  background: linear-gradient(rgb(40, 40, 40), rgb(10, 10, 10));;
+}
+
 .SignupPage .signup-header {
   text-align: center;
+  width: 100vw;
   margin: 0;
-  padding: 3vh 0;
+  padding: 6vh 0 3vh;
   background-color: rgba(10, 10, 10, 1);
   color: skyblue;
 }
@@ -47,7 +54,7 @@
 }
 
 .SignupPage .signup-btn-row {
-  padding: 3vh 0 5vh;
+  padding: 3vh 0 6vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,4 +82,10 @@
 }
 .SignupPage .cancel-btn:hover {
   border: 1px solid skyblue;
+}
+
+.SignupPage .fader-bottom {
+  height: 10vh;
+  width: 100vw;
+  background: linear-gradient(rgb(10, 10, 10), rgb(40, 40, 40));;
 }

@@ -18,7 +18,7 @@ class SingleProtestPage extends Component {
   }
 
   componentWillUnmount() {
-    document.querySelector('body').style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+    document.querySelector('body').style.backgroundColor = 'rgba(40, 40, 40, 1)';
   }
 
   async updateStateFunction() {

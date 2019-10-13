@@ -10,9 +10,15 @@
   text-align: center;
   width: 100vw;
   margin: 0;
-  padding: 3vh 0;
+  padding: 6vh 0 3vh;
   background-color: rgba(10, 10, 10, 1);
   color: skyblue;
+}
+
+.LoginPage .fader-top {
+  height: 10vh;
+  width: 100vw;
+  background: linear-gradient(rgb(40, 40, 40), rgb(10, 10, 10));;
 }
 
 .LoginPage .login-form {
@@ -48,7 +54,7 @@
 }
 
 .LoginPage .login-btn-row {
-  padding: 3vh 0;
+  padding: 3vh 0 6vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,4 +82,10 @@
 }
 .LoginPage .cancel-btn:hover {
   border: 1px solid skyblue;
+}
+
+.LoginPage .fader-bottom {
+  height: 10vh;
+  width: 100vw;
+  background: linear-gradient(rgb(10, 10, 10), rgb(40, 40, 40));;
 }

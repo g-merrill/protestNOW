@@ -152,6 +152,7 @@ class ProtestCreatePage extends Component {
 
     return (
       <div className='ProtestCreatePage'>
+        <div className='fader-top'></div>
         <h3 className="page-header">Submit an Upcoming Protest to protestNOW:</h3>
         <form className="form-horizontal protest-create-form" onSubmit={this.handleSubmit} >
           <div className="form-group input-ctnr-div">
@@ -205,6 +206,7 @@ class ProtestCreatePage extends Component {
             </div>
           </div>
         </form>
+        <div className='fader-bottom'></div>
       </div>
     );
   }

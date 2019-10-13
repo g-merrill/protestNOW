@@ -6,11 +6,17 @@
   margin-bottom: 50px;
 }
 
+.ProtestCreatePage .fader-top {
+  height: 10vh;
+  width: 100vw;
+  background: linear-gradient(rgb(40, 40, 40), rgb(10, 10, 10));;
+}
+
 .ProtestCreatePage .page-header {
   margin: 0;
   background-color: rgba(10, 10, 10, 1);
   width: 100vw;
-  padding: 6vh 0 4vh;
+  padding: 6vh 0 3vh;
   font-weight: bold;
   color: skyblue;
   text-align: center;
@@ -55,7 +61,7 @@
 
 .ProtestCreatePage .submit-btn-row {
   background-color: rgba(10, 10, 10, 1);
-  padding: 2vh 0;
+  padding: 3vh 0 6vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,3 +91,8 @@
   border: 1px solid skyblue;
 }
 
+.ProtestCreatePage .fader-bottom {
+  height: 10vh;
+  width: 100vw;
+  background: linear-gradient(rgb(10, 10, 10), rgb(40, 40, 40));;
+}
