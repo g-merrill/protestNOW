@@ -71,6 +71,11 @@
   hyphens: auto;
 }
 
+.SingleProtestPage .no-stories-msg {
+  margin: 10vh 0 0;
+  text-decoration: underline;
+}
+
 .SingleProtestPage .stories-section {
   height: 85vh;
   width: 100vw;
@@ -126,6 +131,7 @@
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
+  margin: 5vh 0;
 }
 
 .SingleProtestPage .delete-link {
@@ -133,6 +139,7 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: 2px solid transparent;
+  margin: 5vh 0;
 }
 
 .SingleProtestPage .delete-link:hover {
@@ -140,5 +147,5 @@
 }
 
 .SingleProtestPage .back-to-top-link {
-  margin: 0 0 2vh;
+  margin: 0 0 10vh;
 }

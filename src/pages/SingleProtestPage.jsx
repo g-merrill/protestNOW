@@ -78,7 +78,7 @@ class SingleProtestPage extends Component {
       })
       :
       <div className="story-ctnr">
-        <p>No stories yet!</p>
+        <h3 className="no-stories-msg">No stories yet!</h3>
       </div>;
 
     const protest = this.state.protest;
