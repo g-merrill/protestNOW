@@ -8,12 +8,12 @@ const Spinner = () => (
   <>
     <div className="Spinner-rolling left">
       <div className='Spinner-spinner Spinner-fadein'>
-        <FontAwesomeIcon icon={faVectorSquare} size='5x' color='black' />
+        <FontAwesomeIcon icon={faVectorSquare} size='5x' />
       </div>
     </div>
     <div className="Spinner-rolling right">
       <div className='Spinner-spinner Spinner-fadein'>
-        <FontAwesomeIcon icon={faVectorSquare} size='5x' color='black' />
+        <FontAwesomeIcon icon={faVectorSquare} size='5x' />
       </div>
     </div>
   </>

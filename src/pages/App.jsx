@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './NavBar';
 import HomePage from './HomePage';
 import SignupPage from './SignupPage';
@@ -22,19 +22,20 @@ class App extends Component {
     userFromToken: userService.getUser(),
     users: [],
     protests: [],
-    activePage: 'home',
+    activePage: 'protests',
   };
 
   handleSignupOrLogin = () => {
     let userFromToken = userService.getUser();
     this.setState({
-      userFromToken
+      userFromToken,
+      activePage: 'protests'
     });
   }
 
   handleLogout = () => {
     userService.logout();
-    this.setState({ userFromToken: null, activePage: 'home' });
+    this.setState({ userFromToken: null, activePage: 'protests' });
   }
 
   async componentDidMount() {
@@ -80,12 +81,10 @@ class App extends Component {
           handleLogout={ this.handleLogout }
           changeActive={ this.changeActive }
         />
-        <h1>protestNOW</h1>
+        <h1 className='protestNOW-text'>protest<span className='now-text'>NOW</span></h1>
         <Switch>
           <Route exact path='/' render={() => (
-            <HomePage
-              changeActive={ this.changeActive }
-            />
+            <Redirect to='/protests' />
           )}/>
           <Route exact path='/signup' render={({ history }) => (
             <SignupPage

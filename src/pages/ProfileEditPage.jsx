@@ -6,16 +6,11 @@ class ProfileEditPage extends Component {
 
   handleEditProfile = async e => {
     e.preventDefault();
-
     // get old user properties from state
-
     // compare to new input values
       // for passwords, only change if there is something valid in passwords inputs
-
     // if there are differences, overwrite the old values with the new
-
     // save the updated user in db
-
     // update state & token stuff in app.jsx
   }
 
@@ -23,7 +18,7 @@ class ProfileEditPage extends Component {
     return (
       <div className='ProfileEditPage'>
         <h3>Edit Profile</h3>
-        <form id="edit-form" className="form-horizontal" onSubmit={this.handleEditProfile}>
+        <form id="edit-form" className="form-horizontal">
           <div className="form-group">
             <div className="col-sm-12">
               <label htmlFor="username">Username</label>

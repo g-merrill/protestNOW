@@ -1,11 +1,19 @@
 * {
   box-sizing: border-box;
+  color: lightgray;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
   font-family: "Roboto", "Oxygen", "Open Sans", "Lato", "Fira Sans", sans-serif;
-  background: #f2f2f2;
+  background: rgba(40, 40, 40, 1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -13,7 +13,12 @@ class SingleProtestPage extends Component {
   }
 
   componentDidMount() {
+    document.querySelector('body').style.backgroundColor = 'rgba(10, 10, 10, 1)';
     this.updateStateFunction();
+  }
+
+  componentWillUnmount() {
+    document.querySelector('body').style.backgroundColor = 'rgba(40, 40, 40, 1)';
   }
 
   async updateStateFunction() {
@@ -35,14 +40,6 @@ class SingleProtestPage extends Component {
     }
     this.setState({ protest, stories, users, userHasStory, userStoryID });
   }
-
-  // submitDifferentStory = storyID => {
-  //   // delete current story
-  //   // reroute to story create page
-  //   // OR
-  //   // build out the edit story page
-  //   console.log('ran submitDifferentStory function for', storyID);
-  // }
 
   deleteStory = async storyID => {
     await storiesService.deleteStory(storyID);

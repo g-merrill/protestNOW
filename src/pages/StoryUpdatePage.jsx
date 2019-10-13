@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faImage, faCircle } from '@fortawesome/free-solid-svg-icons'
+import { faImage } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment';
 import Spinner from '../components/Spinner';
 import Images from '../components/Images';
@@ -103,12 +103,13 @@ class StoryUpdatePage extends Component {
           return <Images images={images} removeImage={this.removeImage} onChange={this.onChange} />
         default:
           return (
-            <div className='Images-fadein'>
-              <img src={this.state.imgUrl} alt='' />
+            <div className='Images-fadein Images-page-ctnr'>
+              <div className='Images-photo-ctnr'>
+                <img className='Images-photo' src={this.state.imgUrl} alt='yourImg' />
+              </div>
               <div className='Images-edit-btn'>
-                <label htmlFor='single' className='fa-layers fa-fw'>
-                  <FontAwesomeIcon icon={faCircle} color='black' size='6x' />
-                  <FontAwesomeIcon icon={faImage} color='#f2f2f2' size='4x' />
+                <label htmlFor='single'>
+                  <FontAwesomeIcon icon={faImage} size='5x' />
                 </label>
                 <input type='file' id='single' onChange={this.onChange} />
               </div>

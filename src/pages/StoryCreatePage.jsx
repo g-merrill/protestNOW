@@ -118,7 +118,7 @@ class StoryCreatePage extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Add Your Story</button>&nbsp;&nbsp;
+              <button className="btn btn-default add-story-btn">Add Your Story</button>&nbsp;&nbsp;
               <Link to={`/protests/${this.props.protestID}`}>Cancel</Link>
             </div>
           </div>

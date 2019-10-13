@@ -6,13 +6,21 @@ class NavBar extends Component {
 
   render() {
     this.navJSX = this.props.user ?
-      <div id="top">
+      <>
         <Link
-          to='/'
-          className={`NavBar-link ${this.props.activePage === 'home' ? 'active' : 'inactive'}`}
-          onClick={() => this.props.changeActive('home')}
+          to='/protests'
+          className={`NavBar-link ${this.props.activePage === 'protests' ? 'active' : 'inactive'}`}
+          onClick={() => this.props.changeActive('protests')}
         >
-          HOME
+          PROTESTS
+        </Link>
+        &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <Link
+          to='/protests/create'
+          className={`NavBar-link ${this.props.activePage === 'addprotest' ? 'active' : 'inactive'}`}
+          onClick={() => this.props.changeActive('addprotest')}
+        >
+          ADD PROTEST
         </Link>
         &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
         <Link
@@ -30,31 +38,17 @@ class NavBar extends Component {
         >
           PROFILE
         </Link>
-        &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      </>
+      :
+      <>
         <Link
           to='/protests'
-          className='NavBar-link'
+          className={`NavBar-link ${this.props.activePage === 'protests' ? 'active' : 'inactive'}`}
+          onClick={() => this.props.changeActive('protests')}
         >
           PROTESTS
         </Link>
         &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <Link
-          to='/protests/create'
-          className='NavBar-link'
-        >
-          ADD PROTEST
-        </Link>
-      </div>
-      :
-      <div id="top">
-        <Link
-          to='/'
-          className={`NavBar-link ${this.props.activePage === 'home' ? 'active' : 'inactive'}`}
-          onClick={() => this.props.changeActive('home')}
-        >
-          HOME
-        </Link>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
         <Link
           to='/login'
           className={`NavBar-link ${this.props.activePage === 'login' ? 'active' : 'inactive'}`}
@@ -70,16 +64,9 @@ class NavBar extends Component {
         >
           SIGN UP
         </Link>
-        &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <Link
-          to='/protests'
-          className='NavBar-link'
-        >
-          PROTESTS
-        </Link>
-      </div>;
+      </>;
     return (
-      <div className='NavBar'>
+      <div className='NavBar' id='top'>
         {this.navJSX}
       </div>
     );

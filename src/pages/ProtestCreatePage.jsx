@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
 import moment from 'moment';
 import omit from 'lodash/omit';
-import './css/ProtestCreatePage.css';
 import DatePicker from '../components/DatePicker';
-import protestService from '../utils/protestService';
-
 import { SingleDatePickerPhrases } from '../defaultPhrases';
 import SingleDatePickerShape from '../shapes/SingleDatePickerShape';
 import { HORIZONTAL_ORIENTATION, ANCHOR_LEFT } from '../constants';
 import isInclusivelyAfterDay from '../utils/isInclusivelyAfterDay';
+import './css/ProtestCreatePage.css';
+import protestService from '../utils/protestService';
+
 
 const propTypes = {
   // example props for the demo
@@ -152,55 +152,61 @@ class ProtestCreatePage extends Component {
 
     return (
       <div className='ProtestCreatePage'>
-        <div>
-          <header className="header-footer">Protest Details</header>
-          <form className="form-horizontal" onSubmit={this.handleSubmit} >
-            <div className="form-group">
-              <div className="col-sm-12">
-                <input type="text" className="form-control" placeholder="Protest Name" value={this.state.name} name="name" onChange={this.handleChange} />
+        <div className='fader-top'></div>
+        <h3 className="page-header">Submit an Upcoming Protest to protestNOW:</h3>
+        <form className="form-horizontal protest-create-form" onSubmit={this.handleSubmit} >
+          <div className="form-group input-ctnr-div">
+            <p className='input-label'>Name of the protest&nbsp;&nbsp;=>&nbsp;&nbsp;</p>
+            <div>
+              <input type="text" className="form-control" placeholder="Protest Name" value={this.state.name} name="name" onChange={this.handleChange} />
+            </div>
+          </div>
+          <div className="form-group input-ctnr-div">
+            <p className='input-label'>Date&nbsp;&nbsp;=>&nbsp;&nbsp;</p>
+            <div className="DatePicker-ctnr">
+              <DatePicker
+                {...props}
+                id="protestDatePickerContainer"
+                date={date}
+                focused={focused}
+                onDateChange={this.onDateChange}
+                onFocusChange={this.onFocusChange}
+                initialDate={{
+                  _isAMomentObject: true,
+                  _isUTC: false,
+                  _pf: {
+                    empty: false,
+                    unusedTokens: [],
+                    unusedInput: []
+                  }
+                }}
+                showClearDate
+                reopenPickerOnClearDate
+              />
+            </div>
+          </div>
+          <div className="form-group input-ctnr-div">
+            <p className='input-label'>City&nbsp;&nbsp;=>&nbsp;&nbsp;</p>
+            <div>
+              <input type="text" className="form-control" placeholder="City" value={this.state.city} name="city" onChange={this.handleChange} />
+            </div>
+          </div>
+          <div className="form-group input-ctnr-div">
+            <p className='input-label'>Location in the city&nbsp;&nbsp;=>&nbsp;&nbsp;</p>
+            <div>
+              <input type="text" className="form-control" placeholder="Location" value={this.state.location} name="location" onChange={this.handleChange} />
+            </div>
+          </div>
+          <div className="form-group">
+            <div className="submit-btn-row">
+              <button className="btn btn-default submit-btn">Create Protest</button>&nbsp;&nbsp;
+              <div>
+                <Link className="cancel-btn" to='/'>Cancel</Link>
               </div>
             </div>
-            <div className="form-group">
-              <div className="DatePicker-ctnr">
-                <DatePicker
-                  {...props}
-                  id="protestDatePickerContainer"
-                  date={date}
-                  focused={focused}
-                  onDateChange={this.onDateChange}
-                  onFocusChange={this.onFocusChange}
-                  initialDate={{
-                    _isAMomentObject: true,
-                    _isUTC: false,
-                    _pf: {
-                      empty: false,
-                      unusedTokens: [],
-                      unusedInput: []
-                    }
-                  }}
-                  showClearDate
-                  reopenPickerOnClearDate
-                />
-              </div>
-            </div>
-            <div className="form-group">
-              <div className="col-sm-12">
-                <input type="text" className="form-control" placeholder="City" value={this.state.city} name="city" onChange={this.handleChange} />
-              </div>
-            </div>
-            <div className="form-group">
-              <div className="col-sm-12">
-                <input type="text" className="form-control" placeholder="Location" value={this.state.location} name="location" onChange={this.handleChange} />
-              </div>
-            </div>
-            <div className="form-group">
-              <div className="col-sm-12 text-center">
-                <button className="btn btn-default">Create Protest</button>&nbsp;&nbsp;
-                <Link to='/'>Cancel</Link>
-              </div>
-            </div>
-          </form>
-        </div>
+          </div>
+        </form>
+        <div className='fader-bottom'></div>
       </div>
     );
   }

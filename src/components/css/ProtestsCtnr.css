@@ -1,11 +1,53 @@
 .ProtestsCtnr {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-height: 100vh;
+  width: 100vw;
+  overflow: scroll;
 }
 
-.ProtestsCtnr .protest-link-ctnr {
-  border: 1px solid;
+.ProtestsCtnr .protest-link {
+  margin: 10px 0;
+  border-radius: 7px;
+  padding: 3px;
+  height: 250px;
+  width: 250px;
+  overflow: scroll;
+  background: linear-gradient(to right, skyblue, #4C5DC9);
+  text-decoration: none;
 }
+
+.ProtestsCtnr .protest-link:hover {
+  background: linear-gradient(to left, skyblue, #4C5DC9);
+}
+
+
+.ProtestsCtnr .protest-details-ctnr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  border-radius: 3px;
+  padding: 0 2vw;
+  background-color: rgba(15, 15, 15, 1);
+}
+
+.ProtestsCtnr .protest-link:hover .protest-details-ctnr {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.ProtestsCtnr .protest-details-ctnr>* {
+  color: skyblue;
+}
+
+.ProtestsCtnr .protest-name {
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0 20px;
+}
+
+.ProtestsCtnr .protest-link:hover .protest-details-ctnr>* {
+  color: lightgray;
+}
+
