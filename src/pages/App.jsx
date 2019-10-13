@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './css/App.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './NavBar';
-import HomePage from './HomePage';
 import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
 import ProfilePage from './ProfilePage';

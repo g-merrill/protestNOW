@@ -121,32 +121,37 @@ class StoryUpdatePage extends Component {
       <div className="StoryUpdatePage">
         <h3>Update Your Story for: </h3>
         <h4>{ prevStory.protest.name }</h4>
-        <h5>{ moment(prevStory.protest.date).format('MMMM Do, YYYY') }</h5>
+        <h5>on { moment(prevStory.protest.date).format('MMMM Do, YYYY') }</h5>
         <form className="form-horizontal story-form" onSubmit={this.handleSubmit}>
           <div className='ImageUpload'>
             {content()}
           </div>
-          <p>{ storyCreator } said: </p>
-          <p>Why I { prevStory.mood }:</p>
-          <p>"{ prevStory.entry }"</p>
-          <hr/>
-          <span className="mood-ctnr">
-            <p className="mood-whyI">Why I</p>
-            <select name="mood" onChange={this.handleChange} className="mood-dropdown form-control">
-              <option defaultValue="am here">am here</option>
-              <option value="am showing up">am showing up</option>
-            </select>
-          </span>
-          <br/>
-          <div className="entry-ctnr">
-            <span className="beg-quote">"</span>
-            <textarea name="entry" id="entry" cols="30" rows="10" defaultValue={prevStory.entry} placeholder="Enter your story here." onChange={this.handleChange}></textarea>
-            <span className="end-quote">"</span>
+          <div className="previous-story">
+            <h5>Previous Story Content:</h5>
+            <p className="story-creator"><span className="skyblue">{ storyCreator }</span> said: </p>
+            <p>Why I <span className="skyblue">{ prevStory.mood }</span>:</p>
+            <p>"{ prevStory.entry }"</p>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Save Your Story</button>&nbsp;&nbsp;
-              <Link to={`/protests/${this.props.protestID}`}>Cancel</Link>
+          <div className="updated-story">
+            <h5>Updated Story Content:</h5>
+            <span className="mood-ctnr">
+              <div className="mood-whyI">Why I ...</div>
+              <select name="mood" onChange={this.handleChange} className="mood-dropdown form-control">
+                <option defaultValue="am here">am here</option>
+                <option value="am showing up">am showing up</option>
+              </select>
+            </span>
+            <br/>
+            <div className="entry-ctnr">
+              <span className="beg-quote">"</span>
+              <textarea className="entry-text-area" name="entry" id="entry" cols="30" rows="10" defaultValue={prevStory.entry} placeholder="Enter your story here." onChange={this.handleChange}></textarea>
+              <span className="end-quote">"</span>
+            </div>
+            <div className="form-group">
+              <div className="col-sm-12 text-center">
+                <button className="btn btn-default hover-white save-btn">Save Your Story</button>&nbsp;&nbsp;
+                <Link className="skyblue no-underline hover-white btn btn-default cancel-btn" to={`/protests/${this.props.protestID}`}>Cancel</Link>
+              </div>
             </div>
           </div>
         </form>

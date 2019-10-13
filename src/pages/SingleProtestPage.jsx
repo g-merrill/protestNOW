@@ -55,25 +55,25 @@ class SingleProtestPage extends Component {
         let usersButtons;
         if (this.props.user && this.props.user.username === s.creator.username) {
           usersButtons =
-          <div>
-            <Link to={`/protests/${this.props.protestID}/stories/${this.state.userStoryID}/update`}>Edit your story.</Link>
-            <a href="#top" onClick={() => this.deleteStory(s._id)}>Delete your story.</a>
+          <div className="user-links">
+            <Link className="skyblue no-underline hover-white edit-link" to={`/protests/${this.props.protestID}/stories/${this.state.userStoryID}/update`}>Edit your Story</Link>
+            <a className="no-underline delete-link" href="#top" onClick={() => this.deleteStory(s._id)}>Delete</a>
           </div>;
         }
         return (
-          <div key={idx + 1}>
-            <div className="story-ctnr">
-              <p>Story #{idx + 1}: </p>
-              <img id={s._id} src={s.photoUrl} alt="" />
+          <div key={idx + 1} className="story-ctnr">
+            <div className="story-details-ctnr">
+              <h5 className="story-number">Story #{idx + 1}: </h5>
+              <img id={s._id} className="story-image" src={s.photoUrl} alt="" />
               <div className="story-text-content">
-                <p className="story-creator">{this.state.users[idx]} said:</p>
-                <p className="story-mood">Why I {s.mood}:</p>
+                <p className="story-creator"><span className="skyblue">{this.state.users[idx]}</span> said:</p>
+                <p className="story-mood">Why I <span className="skyblue">{s.mood}</span>:</p>
                 <p className="story-entry">"{s.entry}"</p>
               </div>
             </div>
             {usersButtons}
-            <a href='#top'>Back to the Top</a>
-            </div>
+            <a className="skyblue no-underline hover-white back-to-top-link" href='#top'>Back to the Top</a>
+          </div>
         );
       })
       :
@@ -86,23 +86,29 @@ class SingleProtestPage extends Component {
     let storyLinks;
     if (this.props.user) {
       storyLinks = this.state.userHasStory ?
-        <a href={`#${this.state.userStoryID}`}>See your Story</a>
+        <a className="skyblue no-underline hover-white" href={`#${this.state.userStoryID}`}>See your Story</a>
         :
-        <Link to={`${this.props.match.url}/stories/create`}>Add your Story!</Link>
+        <Link className="skyblue no-underline hover-white" to={`${this.props.match.url}/stories/create`}>Add your Story!</Link>
     }
 
     return (
       <div className="SingleProtestPage">
-        <h3>{protest.name}</h3>
-        <div className="protest-info">
-          <p>{moment(protest.date).format("MMMM Do, YYYY")}</p>
-          <p>{protest.city}</p>
-          <p>Location: {protest.location}</p>
-          <p># stories: {this.state.stories.length}</p>
-        </div>
-        {/* <input class="search-bar" id="search" type="text" name="query" onkeyup={() => search()} placeholder="Search Stories" /> */}
-        {storyLinks}
-        {stories}
+        <section className="top-section">
+          <div className="protest-details-ctnr">
+            <h3 className='protest-name'>{protest.name}</h3>
+            <div className="protest-other-details">
+              <p>Date:<br/><span className="protest-other-detail skyblue">{moment(protest.date).format("MMMM Do, YYYY")}</span></p>
+              <p>City:<br/><span className="protest-other-detail skyblue">{protest.city}</span></p>
+              <p># stories:<br/><span className="protest-other-detail skyblue">{this.state.stories.length}</span></p>
+              <p>Location:<br/><span className="protest-other-detail skyblue">{protest.location}</span></p>
+            </div>
+            {/* <input class="search-bar" id="search" type="text" name="query" onkeyup={() => search()} placeholder="Search Stories" /> */}
+            {storyLinks}
+          </div>
+        </section>
+        <section className="stories-section">
+          {stories}
+        </section>
       </div>
     );
   }

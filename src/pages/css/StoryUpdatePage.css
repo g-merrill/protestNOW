@@ -5,3 +5,91 @@
   align-items: center;
   margin-bottom: 50px;
 }
+
+.StoryUpdatePage .skyblue {
+  color: skyblue;
+}
+
+.StoryUpdatePage .no-underline {
+  text-decoration: none;
+}
+
+.StoryUpdatePage .story-creator {
+  text-align: center;
+}
+
+.StoryUpdatePage .previous-story * {
+  font-style: italic;
+}
+
+.StoryUpdatePage .updated-story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 5vh 0 0;
+}
+
+.StoryUpdatePage .mood-ctnr {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.StoryUpdatePage .mood-whyI {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.StoryUpdatePage .mood-dropdown {
+  background-color: rgba(10, 10, 10, 1);
+  border: none;
+  color: skyblue;
+  width: 70%;
+}
+
+.StoryUpdatePage .entry-ctnr {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.StoryUpdatePage .entry-text-area {
+  background-color: rgba(10, 10, 10, 1);
+  border: none;
+  color: skyblue;
+  width: 95%;
+  padding: 15px 20px;
+}
+
+.StoryUpdatePage .entry-text-area::placeholder {
+  color: darkgray;
+}
+
+.StoryUpdatePage .beg-quote {
+  font-size: 150%;
+}
+.StoryUpdatePage .end-quote {
+  font-size: 150%;
+  align-self: flex-end;
+}
+
+.StoryUpdatePage .save-btn {
+  background-color: skyblue;
+  color: rgba(10, 10, 10, 1);
+  font-weight: bold;
+  margin: 3vh 3vw 0 0;
+}
+
+.StoryUpdatePage .cancel-btn {
+  margin: 3vh 0 0 3vw;
+}
+
+.StoryUpdatePage .hover-white:hover {
+  color: white;
+}

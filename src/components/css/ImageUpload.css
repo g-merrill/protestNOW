@@ -3,10 +3,11 @@
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 100vw;
+  width: 90vw;
   position: relative;
-  border: 1px solid;
+  border: 1px dashed;
   height: 520px;
+  margin: 3vh 0;
 }
 .ImageUpload .Buttons-page-ctnr {
   display: flex;

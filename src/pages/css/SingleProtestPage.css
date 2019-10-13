@@ -1,18 +1,13 @@
 .SingleProtestPage {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  position: relative;
 }
 
 .SingleProtestPage .protest-info {
   display: flex;
-  border: 1px solid;
-}
-
-.SingleProtestPage .story-ctnr {
-  border: 1px solid;
 }
 
 .SingleProtestPage img {
@@ -20,4 +15,130 @@
   max-width: 420px;
   padding: 10px;
   border: 1px dashed #999;
+}
+
+.SingleProtestPage .top-section {
+  border-radius: 7px;
+  max-height: 33vh;
+  padding: 3px;
+  width: 90vw;
+  overflow: scroll;
+  background: linear-gradient(to right, skyblue, #4C5DC9);
+}
+
+.SingleProtestPage .protest-details-ctnr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  border-radius: 5px;
+  padding: 3vmin;
+  background-color: rgba(15, 15, 15, 1);
+}
+
+.SingleProtestPage .protest-name {
+  display: flex;
+  align-items: center;
+  margin: 0 0 3vh;
+  font-weight: bold;
+}
+
+.SingleProtestPage .skyblue {
+  color: skyblue;
+}
+
+.SingleProtestPage .no-underline {
+  text-decoration: none;
+}
+
+.SingleProtestPage .hover-white:hover {
+  color: white;
+}
+
+.SingleProtestPage .protest-other-details {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  max-height: 150px;
+}
+
+.SingleProtestPage .protest-other-detail {
+  padding: 0 1vw;
+  width: 25%;
+  overflow: scroll;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.SingleProtestPage .stories-section {
+  height: 85vh;
+  width: 100vw;
+  overflow: scroll;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SingleProtestPage .story-ctnr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.SingleProtestPage .story-details-ctnr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.SingleProtestPage .story-number {
+  margin: 2vh 0;
+}
+
+.SingleProtestPage .story-image {
+  margin: 0 0 2vh;
+}
+
+.SingleProtestPage .story-text-content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.SingleProtestPage .story-creator {
+  text-align: center;
+}
+
+.SingleProtestPage .user-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 2vh;
+}
+
+.SingleProtestPage .edit-link {
+  color: darkslategray;
+  background-color: skyblue;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.SingleProtestPage .delete-link {
+  color: red;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+}
+
+.SingleProtestPage .delete-link:hover {
+  border: 2px solid red;
+}
+
+.SingleProtestPage .back-to-top-link {
+  margin: 0 0 2vh;
 }
