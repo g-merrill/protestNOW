@@ -6,19 +6,23 @@ For my final full-stack web application during GA's Software Engineering Immersi
 
 Browse to [protestNOW](https://protest-now.herokuapp.com)
 
-<img src="https://i.imgur.com/t644y0m.png" width="500">
-protestNOW home page.
 
-<img src="https://i.imgur.com/gFsNY9c.png" width="500">
+protestNOW home page.
+<img src="https://i.imgur.com/t644y0m.png" width="500">
+
+
 protestNOW on mobile.
+<img src="https://i.imgur.com/gFsNY9c.png" width="500">
+
 
 Use the nav bar at the top of the screen for easy navigation around the app.
 
 
 ## Technologies Used
 
+  * React
   * JavaScript, JSX, and CSS
-  * React, Node, Express, MongoDB and MongoDB Atlas, Mongoose, Heroku, Cloudinary
+  * Node, Express, MongoDB and MongoDB Atlas, Mongoose, Heroku, Cloudinary
   * react-dates npm package
   * image uploading via Jesse Heaslip @ https://codeburst.io/react-image-upload-with-kittens-cc96430eaece
   * VS Code
