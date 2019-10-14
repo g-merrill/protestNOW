@@ -8,10 +8,12 @@ Browse to [protestNOW](https://protest-now.herokuapp.com)
 
 
 protestNOW home page.
+
 <img src="https://i.imgur.com/t644y0m.png" width="500">
 
 
 protestNOW on mobile.
+
 <img src="https://i.imgur.com/gFsNY9c.png" width="500">
 
 
