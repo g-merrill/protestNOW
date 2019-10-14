@@ -139,6 +139,13 @@ class StoryUpdatePage extends Component {
               <select name="mood" onChange={this.handleChange} className="mood-dropdown form-control">
                 <option defaultValue="am here">am here</option>
                 <option value="am showing up">am showing up</option>
+                <option value="am angry">am angry</option>
+                <option value="can't stay at home">can't stay at home</option>
+                <option value="took time off work">took time off work</option>
+                <option value="am bringing my whole tribe">am bringing my whole tribe</option>
+                <option value="refuse to be silent on this issue">refuse to be silent on this issue</option>
+                <option value="have to say something">have to say something</option>
+                <option value="have to do something">have to do something</option>
               </select>
             </span>
             <br/>
