@@ -6,54 +6,30 @@ For my final full-stack web application during GA's Software Engineering Immersi
 
 Browse to [protestNOW](https://protest-now.herokuapp.com)
 
-<img src="https://i.imgur.com/0hONig7.png" width="500">
-The truckSFinder home page.
+<img src="https://i.imgur.com/t644y0m.png" width="500">
+protestNOW home page.
+
+<img src="https://i.imgur.com/gFsNY9c.png" width="500">
+protestNOW on mobile.
 
 Use the nav bar at the top of the screen for easy navigation around the app.
 
-To log in, click the 'Log in' button at the top right corner of the screen and proceed as directed.
-
-<img src="https://i.imgur.com/A9zCtvI.png" width="500">
-Make sure to log in!
-
-You must be logged in through your Google account to:
-  * add a food truck to the database
-  * favorite a food truck
-  * add a review to a food truck
-  * edit your submitted food truck
-
-<img src="https://i.imgur.com/WwdZyNf.png" width="500">
-You can edit/delete from your profile once you are logged in.
-
-  * delete your submitted food truck
-  * edit your review
-  * delete your review
-
-Creating an account apart from your Google account is not functional at this time.
-
-<!-- Example img syntax -->
-  <!-- ![loss-img](https://i.imgur.com/bTzUVPo.png) -->
-
-That's about it!  [Head on out there and find some tasty meals with truckSFinder!](https://trucksfinder.herokuapp.com)
-
-Special thanks to Megan Bates from GA's UXDI52 for jumping in and providing a beautiful app design and intuitive user flows that I could take and work off of.
 
 ## Technologies Used
 
-  * JavaScript, EJS, and CSS
-  * Node, Express, MongoDB and MongoDB Atlas, Mongoose, Passport, OAuth, Heroku
-  * Google+ API
+  * JavaScript, JSX, and CSS
+  * React, Node, Express, MongoDB and MongoDB Atlas, Mongoose, Heroku, Cloudinary
+  * react-dates npm package
+  * image uploading via Jesse Heaslip @ https://codeburst.io/react-image-upload-with-kittens-cc96430eaece
   * VS Code
   * Icons from Font Awesome
-  * Additional styling from Bootstrap / Materialize
+  * Additional styling from Bootstrap
 
 ## Next Steps
 
-  * Include food truck locations
+  * Further build out details and options for all data models
+  * Refactor code to include more React components
+  * Implement Sass instead of the currently-very-long css selectors
   * Implement sort, find, and filter functionality
-  * Add a unique to truckSFinder account option
-  * Use external API to populate and update data
-  * Use Google Maps API to show location of food truck
-  * Enable find-a-truck-near-me if user allows access to current location
-  * Switch from Heroku to something that will allow user to upload photos!
-  * Pull from Yelp API to access Yelp ratings and reviews
+  * Introductory video graphic
+  * Skippable tutorial that guides you through the app upon fresh visit
