@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# protestNOW
 
-## Available Scripts
+For my final full-stack web application during GA's Software Engineering Immersive, protestNOW is an app that is designed for protestors.  This app is intended to bring people together under a common cause, yet aims to do so by allowing protesters to share their individual stories for why they chose to protest.  Most times, protests have  been powerful and effective group experiences. Yet for me, sometimes it has been difficult learning the personal and powerful reasons for why everyone else is out there with me.  Also, I wanted to create a way to extend the protest's message beyond the designated day.  protestNOW aims to be as shareable as possible to remedy the latter.  Share, search, filter, and customization functionality as well as improvements on the design/user experience for this app are in the works!
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+Browse to [protestNOW](https://protest-now.herokuapp.com)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="https://i.imgur.com/0hONig7.png" width="500">
+The truckSFinder home page.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Use the nav bar at the top of the screen for easy navigation around the app.
 
-### `npm test`
+To log in, click the 'Log in' button at the top right corner of the screen and proceed as directed.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://i.imgur.com/A9zCtvI.png" width="500">
+Make sure to log in!
 
-### `npm run build`
+You must be logged in through your Google account to:
+  * add a food truck to the database
+  * favorite a food truck
+  * add a review to a food truck
+  * edit your submitted food truck
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="https://i.imgur.com/WwdZyNf.png" width="500">
+You can edit/delete from your profile once you are logged in.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+  * delete your submitted food truck
+  * edit your review
+  * delete your review
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Creating an account apart from your Google account is not functional at this time.
 
-### `npm run eject`
+<!-- Example img syntax -->
+  <!-- ![loss-img](https://i.imgur.com/bTzUVPo.png) -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+That's about it!  [Head on out there and find some tasty meals with truckSFinder!](https://trucksfinder.herokuapp.com)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Special thanks to Megan Bates from GA's UXDI52 for jumping in and providing a beautiful app design and intuitive user flows that I could take and work off of.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies Used
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  * JavaScript, EJS, and CSS
+  * Node, Express, MongoDB and MongoDB Atlas, Mongoose, Passport, OAuth, Heroku
+  * Google+ API
+  * VS Code
+  * Icons from Font Awesome
+  * Additional styling from Bootstrap / Materialize
 
-## Learn More
+## Next Steps
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  * Include food truck locations
+  * Implement sort, find, and filter functionality
+  * Add a unique to truckSFinder account option
+  * Use external API to populate and update data
+  * Use Google Maps API to show location of food truck
+  * Enable find-a-truck-near-me if user allows access to current location
+  * Switch from Heroku to something that will allow user to upload photos!
+  * Pull from Yelp API to access Yelp ratings and reviews
