@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './css/ProfileEditPage.css';
+import './css/ProfileEditPage.scss';
 
 class ProfileEditPage extends Component {
 

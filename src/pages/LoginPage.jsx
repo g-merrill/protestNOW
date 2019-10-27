@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './css/LoginPage.css';
+import './css/LoginPage.scss';
 import userService from '../utils/userService';
 
 class LoginPage extends Component {

@@ -4,7 +4,7 @@ import Spinner from '../components/Spinner';
 import Images from '../components/Images';
 import Buttons from '../components/Buttons';
 
-import './css/StoryCreatePage.css';
+import './css/StoryCreatePage.scss';
 import '../components/css/ImageUpload.css';
 import storiesService from '../utils/storiesService';
 

@@ -1,0 +1,151 @@
+.SingleProtestPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .protest-info {
+    display: flex;
+  }
+
+  img {
+    max-height: 420px;
+    max-width: 420px;
+    padding: 10px;
+    border: 1px dashed #999;
+  }
+
+  .top-section {
+    border-radius: 7px;
+    max-height: 33vh;
+    padding: 3px;
+    width: 90vw;
+    overflow: scroll;
+    background: linear-gradient(to right, skyblue, #4C5DC9);
+  }
+
+  .protest-details-ctnr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    border-radius: 5px;
+    padding: 3vmin;
+    background-color: rgba(15, 15, 15, 1);
+  }
+
+  .protest-name {
+    display: flex;
+    align-items: center;
+    margin: 0 0 3vh;
+    font-weight: bold;
+  }
+
+  .skyblue {
+    color: skyblue;
+  }
+
+  .no-underline {
+    text-decoration: none;
+  }
+
+  .hover-white:hover {
+    color: white;
+  }
+
+  .protest-other-details {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-height: 150px;
+  }
+
+  .protest-other-detail {
+    padding: 0 1vw;
+    width: 25%;
+    overflow: scroll;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .no-stories-msg {
+    margin: 10vh 0 0;
+    text-decoration: underline;
+  }
+
+  .stories-section {
+    height: 85vh;
+    width: 100vw;
+    overflow: scroll;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .story-ctnr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .story-details-ctnr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .story-number {
+    margin: 2vh 0;
+  }
+
+  .story-image {
+    margin: 0 0 2vh;
+  }
+
+  .story-text-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .story-creator {
+    text-align: center;
+  }
+
+  .user-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 2vh;
+  }
+
+  .edit-link {
+    color: darkslategray;
+    background-color: skyblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5vh 0;
+  }
+
+  .delete-link {
+    color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    margin: 5vh 0;
+
+    &:hover {
+      border: 2px solid red;
+    }
+  }
+
+  .back-to-top-link {
+    margin: 0 0 10vh;
+  }
+}

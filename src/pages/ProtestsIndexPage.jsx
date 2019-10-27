@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/ProtestsIndexPage.css';
+import './css/ProtestsIndexPage.scss';
 import ProtestCard from '../components/ProtestCard';
 
 const ProtestsIndexPage = props => (

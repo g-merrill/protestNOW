@@ -9,7 +9,7 @@ import { SingleDatePickerPhrases } from '../defaultPhrases';
 import SingleDatePickerShape from '../shapes/SingleDatePickerShape';
 import { HORIZONTAL_ORIENTATION, ANCHOR_LEFT } from '../constants';
 import isInclusivelyAfterDay from '../utils/isInclusivelyAfterDay';
-import './css/ProtestCreatePage.css';
+import './css/ProtestCreatePage.scss';
 import protestService from '../utils/protestService';
 
 

@@ -7,7 +7,7 @@ import Spinner from '../components/Spinner';
 import Images from '../components/Images';
 import storiesService from '../utils/storiesService';
 import '../components/css/ImageUpload.css';
-import './css/StoryUpdatePage.css';
+import './css/StoryUpdatePage.scss';
 
 const API_URL = '/api/v1/media';
 

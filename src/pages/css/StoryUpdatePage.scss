@@ -1,0 +1,95 @@
+.StoryUpdatePage {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+
+  .skyblue {
+    color: skyblue;
+  }
+
+  .no-underline {
+    text-decoration: none;
+  }
+
+  .story-creator {
+    text-align: center;
+  }
+
+  .previous-story * {
+    font-style: italic;
+  }
+
+  .updated-story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 5vh 0 0;
+  }
+
+  .mood-ctnr {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .mood-whyI {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .mood-dropdown {
+    background-color: rgba(10, 10, 10, 1);
+    border: none;
+    color: skyblue;
+    width: 70%;
+  }
+
+  .entry-ctnr {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .entry-text-area {
+    background-color: rgba(10, 10, 10, 1);
+    border: none;
+    color: skyblue;
+    width: 95%;
+    padding: 15px 20px;
+
+    &::placeholder {
+      color: darkgray;
+    }
+  }
+
+  .beg-quote {
+    font-size: 150%;
+  }
+  .end-quote {
+    font-size: 150%;
+    align-self: flex-end;
+  }
+
+  .save-btn {
+    background-color: skyblue;
+    color: rgba(10, 10, 10, 1);
+    font-weight: bold;
+    margin: 3vh 3vw 0 0;
+  }
+
+  .cancel-btn {
+    margin: 3vh 0 0 3vw;
+  }
+
+  .hover-white:hover {
+    color: white;
+  }
+}

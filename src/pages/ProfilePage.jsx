@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './css/ProfilePage.css';
+import './css/ProfilePage.scss';
 
 const ProfilePage = props => (
   <div className='ProfilePage'>

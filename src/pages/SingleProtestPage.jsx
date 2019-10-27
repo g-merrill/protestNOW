@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-import './css/SingleProtestPage.css'
+import './css/SingleProtestPage.scss'
 import storiesService from '../utils/storiesService';
 
 class SingleProtestPage extends Component {

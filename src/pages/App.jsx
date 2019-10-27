@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/App.css';
+import './css/App.scss';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import SignupPage from './SignupPage';
@@ -73,7 +73,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App-ctnr">
+      <div className="App">
         <NavBar
           user={ this.state.userFromToken }
           activePage={ this.state.activePage }

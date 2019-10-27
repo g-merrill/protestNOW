@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './css/HomePage.css';
 
 class HomePage extends Component {
 
