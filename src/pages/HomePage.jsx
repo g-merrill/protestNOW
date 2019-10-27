@@ -8,7 +8,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="HomePage">HomePage</div>
+      <div>HomePage</div>
     );
   }
 }
