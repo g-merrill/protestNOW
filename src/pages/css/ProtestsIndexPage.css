@@ -1,4 +1,4 @@
-.ProtestsCtnr {
+.ProtestsIndexPage {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -7,7 +7,7 @@
   overflow: scroll;
 }
 
-.ProtestsCtnr .protest-link {
+.ProtestsIndexPage .protest-link {
   margin: 10px 0;
   border-radius: 7px;
   padding: 3px;
@@ -18,12 +18,12 @@
   text-decoration: none;
 }
 
-.ProtestsCtnr .protest-link:hover {
+.ProtestsIndexPage .protest-link:hover {
   background: linear-gradient(to left, skyblue, #4C5DC9);
 }
 
 
-.ProtestsCtnr .protest-details-ctnr {
+.ProtestsIndexPage .protest-details-ctnr {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,21 +33,21 @@
   background-color: rgba(15, 15, 15, 1);
 }
 
-.ProtestsCtnr .protest-link:hover .protest-details-ctnr {
+.ProtestsIndexPage .protest-link:hover .protest-details-ctnr {
   background-color: rgba(0, 0, 0, 1);
 }
 
-.ProtestsCtnr .protest-details-ctnr>* {
+.ProtestsIndexPage .protest-details-ctnr>* {
   color: skyblue;
 }
 
-.ProtestsCtnr .protest-name {
+.ProtestsIndexPage .protest-name {
   text-align: center;
   font-weight: bold;
   margin: 10px 0 20px;
 }
 
-.ProtestsCtnr .protest-link:hover .protest-details-ctnr>* {
+.ProtestsIndexPage .protest-link:hover .protest-details-ctnr>* {
   color: lightgray;
 }
 

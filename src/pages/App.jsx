@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './css/App.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import NavBar from './NavBar';
+import NavBar from '../components/NavBar';
 import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
 import ProfilePage from './ProfilePage';
 import ProfileEditPage from './ProfileEditPage';
 import ProtestCreatePage from './ProtestCreatePage';
 import userService from '../utils/userService';
-import ProtestsCtnr from '../components/ProtestsCtnr';
+import ProtestsIndexPage from './ProtestsIndexPage';
 import * as moment from 'moment';
 import protestService from '../utils/protestService';
 import SingleProtestPage from './SingleProtestPage';
@@ -111,7 +111,7 @@ class App extends Component {
             />
           )}/>
           <Route exact path='/protests' render={({ history }) => (
-            <ProtestsCtnr
+            <ProtestsIndexPage
               history={ history }
               user={ this.state.userFromToken }
               protests={ this.state.protests }

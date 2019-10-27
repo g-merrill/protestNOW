@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-import './css/ProtestsCtnr.css'
+import './css/ProtestsIndexPage.css'
 
-const ProtestsCtnr = props => (
-  <div className="ProtestsCtnr">
+const ProtestsIndexPage = props => (
+  <div className="ProtestsIndexPage">
     {props.protests.map((p, idx) => (
       <Link
         to={`/protests/${p._id}`}
@@ -23,4 +23,4 @@ const ProtestsCtnr = props => (
   </div>
 );
 
-export default ProtestsCtnr;
+export default ProtestsIndexPage;
