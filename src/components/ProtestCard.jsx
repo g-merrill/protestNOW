@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-import './css/ProtestCard.css';
+import './css/ProtestCard.scss';
 
 const ProtestCard = props => (
   <Link
