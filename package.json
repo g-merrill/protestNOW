@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.7.7",
     "@babel/runtime": "^7.6.3",
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
@@ -29,7 +30,7 @@
     "react-dom": "^16.10.2",
     "react-moment-proptypes": "^1.7.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.1.2",
+    "react-scripts": "^3.3.0",
     "react-with-direction": "^1.3.1",
     "serve-favicon": "^2.5.0"
   },
@@ -37,8 +38,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "unit-test": "mocha --require js:babel-core/register",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
+  },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -55,5 +63,13 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "jest-fetch-mock": "^3.0.0",
+    "mocha": "^6.2.2"
+  }
 }
