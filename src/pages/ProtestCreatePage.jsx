@@ -11,6 +11,7 @@ import { HORIZONTAL_ORIENTATION, ANCHOR_LEFT } from '../constants';
 import isInclusivelyAfterDay from '../utils/isInclusivelyAfterDay';
 import './css/ProtestCreatePage.scss';
 import protestService from '../utils/protestService';
+import userService from '../utils/userService';
 
 
 const propTypes = {
@@ -128,7 +129,7 @@ class ProtestCreatePage extends Component {
       };
       // THIS IS THE BACKEND STUFF
       // below is the fetch call in the service file
-      const protest = await protestService.addProtest(protestInputs);
+      const protest = await protestService.addProtest(protestInputs, userService);
       // THIS IS THE BACKEND STUFF
       this.props.addProtestToState(protest);
       // Successfully signed up - show GamePage
