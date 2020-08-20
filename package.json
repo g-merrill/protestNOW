@@ -10,7 +10,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.5",
     "airbnb-prop-types": "^2.15.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.15.0",
     "cors": "^2.8.5",
